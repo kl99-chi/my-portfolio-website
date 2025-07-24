@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-padding-top: 160px;"> <!-- Added scroll-padding-top here -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keletso Ramothibe | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1e293b;
+      padding: 20px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header-content {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+    .main-nav {
+      width: 100%;
+      background-color: #1e293b;
+      padding: 10px 0;
+      border-top: 1px solid #334155;
+    }
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .main-nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .main-nav a:hover {
+      background-color: #38bdf8;
+      color: #1e293b;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #2563eb;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #1e293b;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    h2 {
+      color: #38bdf8;
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .project {
+      background-color: #0f172a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .project h3 {
+      color: #f1f5f9;
+      margin-bottom: 10px;
+    }
+    .project p {
+      color: #cbd5e1;
+      margin-bottom: 10px;
+    }
+    .project strong {
+      color: #f1f5f9;
+    }
+    .project a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .project a:hover {
+      text-decoration: underline;
+    }
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .skills-container h3 {
+      color: #f1f5f9;
+      margin-bottom: 10px;
+    }
+    .skills-container ul {
+      list-style-type: disc;
+      padding-left: 25px;
+      color: #cbd5e1;
+    }
+    .skills-container p {
+      color: #cbd5e1;
+    }
+    footer {
+      text-align: center;
+      background-color: #1e293b;
+      padding: 20px;
+      font-size: 14px;
+      color: #94a3b8;
+      border-top: 1px solid #334155;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: #38bdf8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .socials a:hover {
+      color: #60a5fa;
+    }
+
+    /* About section specific styling */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+      text-align: center;
+    }
+    #about img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+    #about div {
+      flex: 1;
+      min-width: 280px;
+      text-align: left;
+    }
+    #about h2 {
+      text-align: left;
+      margin-left: 0;
+    }
+    #about p {
+      color: #f1f5f9;
+      line-height: 1.8;
+    }
+
+    /* Responsive adjustments for about section */
+    @media (min-width: 768px) {
+      #about {
+        justify-content: space-between;
+        text-align: left;
+      }
+      #about img {
+        width: 300px;
+        height: 300px;
+      }
+      #about h2 {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>Keletso Ramothibe</h1>
+    <p>Aspiring IT Professional | Programmer | Problem Solver</p>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">My Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#resume">Resume</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="about">
+  <img src="C:\Users\kelet\Downloads\keletso_portfolio (3)\profile.jpg" alt="Profile Photo"
+       onerror="this.onerror=null;this.src='https://placehold.co/300x300/667eea/ffffff?text=Profile';" />
+  <div>
+    <h2>👨‍💻 About Me</h2>
+    <p>
+      I am a third-year IT student who aspires to be an IT professional with a strong foundation in
+      <strong>programming, networking, and troubleshooting</strong>. Although I currently lack professional
+      experience, I am a reliable, adaptable, and curious individual who is always eager to learn. I’m passionate about solving problems and look forward to applying my technical skills in real-world environments.
+    </p>
+  </div>
+</section>
+
+<section id="work">
+  <h2>🛠️ My Work</h2>
+
+  <div class="project">
+    <h3>🏃 Awesome Athletics Club (AAC) System</h3>
+    <p>This is a full-stack project that allows club administrators to manage members, generate reports, register products, and more. It includes login/logout systems, validation, sorting/filtering, and a printable reporting feature. Designed with usability and functionality in mind.</p>
+    <p><strong>Technologies:</strong> C#, Windows Forms, SQL, .NET</p>
+  </div>
+
+  <div class="project">
+    <h3>📂 Other Projects</h3>
+    <p>Explore more of my work and other assignments on my GitHub profile.</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/kl99-chi" target="_blank">github.com/kl99-chi</a></p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>💡 Skills</h2>
+  <div class="skills-container">
+    <h3>Technical Skills</h3>
+    <ul>
+      <li>Programming: Python, C/C++, C#, Java</li>
+      <li>Web: HTML + CSS</li>
+      <li>Database: SQL</li>
+      <li>Networking: Cisco Packet Tracer (router/switch simulation)</li>
+      <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+      <li>Network & Hardware Troubleshooting</li>
+    </ul>
+
+    <h3>Languages</h3>
+    <p>Sesotho, IsiZulu, Setswana, English</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>📞 Contact Me</h2>
+  <p>Email: <a href="mailto:keletsoramothibe99@gmail.com">keletsoramothibe99@gmail.com</a></p>
+  <p>Phone: 063 464 8207</p>
+
+  <div class="socials">
+    <p>Connect with me:</p>
+    <a href="https://www.linkedin.com/in/keletso-ramothibe-793583376" target="_blank">LinkedIn</a>
+    <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank">Facebook</a>
+    <a href="https://github.com/kl99-chi" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<section id="resume" style="text-align: center; padding: 40px 20px;">
+  <a href="KELETSO_Resume.pdf" class="btn" download>📄 Download My Resume</a>
+</section>
+
+<footer>
+  &copy; 2025 Keletso Ramothibe. All rights reserved.
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
