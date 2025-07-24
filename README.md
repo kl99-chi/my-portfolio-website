@@ -32,9 +32,8 @@ To view this portfolio website locally on your machine:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-github-username/my-portfolio-website.git](https://github.com/your-github-username/my-portfolio-website.git)
+    git clone https://github.com/kl99-chi/my-portfolio-website.git
     ```
-    (Replace `your-github-username` and `my-portfolio-website` with your actual details)
 2.  **Navigate to the project directory:**
     ```bash
     cd my-portfolio-website
