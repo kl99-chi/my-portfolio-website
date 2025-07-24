@@ -47,9 +47,9 @@ This website is deployed using [Netlify/GitHub Pages/Your chosen hosting service
 You can view the live version here: [Your Live Website URL (e.g., https://your-portfolio.netlify.app/)]
 
 ## Contact
-- **Email:** [your.email@example.com]
-- **LinkedIn:** [Link to your LinkedIn profile]
-- **GitHub:** [Link to your GitHub profile]
+- **Email:** keletsoramothibe99@gmail.com
+- **LinkedIn:** www.linkedin.com/in/keletso-ramothibe-793583376
+- **GitHub:** https://github.com/kl99-chi
 
 ---
-© 2025 [Your Name]. All rights reserved.
+© 2025 Keletso Ramothibe. All rights reserved.
