@@ -43,8 +43,8 @@ To view this portfolio website locally on your machine:
     Simply open the `index.html` file in your preferred web browser.
 
 ## Deployment
-This website is deployed using [Netlify/GitHub Pages/Your chosen hosting service].
-You can view the live version here: [Your Live Website URL (e.g., https://your-portfolio.netlify.app/)]
+This website is deployed using Netlify through GitHub Pages.
+You can view the live version here: https://keletso-ramothibe-portfolio-website.netlify.app/
 
 ## Contact
 - **Email:** keletsoramothibe99@gmail.com
