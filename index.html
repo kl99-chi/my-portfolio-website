@@ -195,14 +195,14 @@
     }
     .light-mode {
       background-color: #f1f5f9 !important;
-      color: #0f172a !important;
+      color: #0f172a !important; /* General text color for light mode */
     }
     .light-mode header,
     .light-mode section,
     .light-mode footer,
     .light-mode .project {
       background-color: #ffffff !important;
-      color: #0f172a !important;
+      color: #0f172a !important; /* Ensure main blocks have dark text */
       border-color: #e2e8f0 !important;
     }
     .light-mode a {
@@ -215,6 +215,18 @@
     .light-mode .main-nav a:hover {
       background-color: #2563eb;
       color: #ffffff;
+    }
+    /* Specific text elements that need darker color in light mode */
+    .light-mode .project p,
+    .light-mode .project strong,
+    .light-mode .skills-container ul,
+    .light-mode .skills-container p {
+      color: #343a40 !important; /* A slightly softer dark gray for readability */
+    }
+    /* New rule for the specific h3 elements */
+    .light-mode .project h3,
+    .light-mode .skills-container h3 {
+      color: #0f172a !important; /* Darker color for headings in light mode */
     }
     /* Style for the custom message */
     #form-message {
