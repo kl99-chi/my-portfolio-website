@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-padding-top: 160px;"> <!-- Added scroll-padding-top here -->
+<html lang="en" style="scroll-padding-top: 160px;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,7 +14,7 @@
     }
     header {
       background-color: #1e293b;
-      padding: 20px 20px;
+      padding: 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -146,13 +146,10 @@
       margin: 0 10px;
       color: #38bdf8;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
     .socials a:hover {
       color: #60a5fa;
     }
-
-    /* About section specific styling */
     #about {
       display: flex;
       flex-wrap: wrap;
@@ -176,14 +173,7 @@
     }
     #about h2 {
       text-align: left;
-      margin-left: 0;
     }
-    #about p {
-      color: #f1f5f9;
-      line-height: 1.8;
-    }
-
-    /* Responsive adjustments for about section */
     @media (min-width: 768px) {
       #about {
         justify-content: space-between;
@@ -193,9 +183,29 @@
         width: 300px;
         height: 300px;
       }
-      #about h2 {
-        text-align: left;
-      }
+    }
+    .light-mode {
+      background-color: #f1f5f9 !important;
+      color: #0f172a !important;
+    }
+    .light-mode header,
+    .light-mode section,
+    .light-mode footer,
+    .light-mode .project {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #e2e8f0 !important;
+    }
+    .light-mode a {
+      color: #2563eb !important;
+    }
+    .light-mode .btn {
+      background-color: #2563eb !important;
+      color: white !important;
+    }
+    .light-mode .main-nav a:hover {
+      background-color: #2563eb;
+      color: #ffffff;
     }
   </style>
 </head>
@@ -218,27 +228,23 @@
 </header>
 
 <section id="about">
-  <img src="profile.jpg" alt="Profile Photo"
-       onerror="this.onerror=null;this.src='https://placehold.co/300x300/667eea/ffffff?text=Profile';" />
+  <img src="profile.jpg" alt="Profile Photo" onerror="this.onerror=null;this.src='https://placehold.co/300x300/667eea/ffffff?text=Profile';" />
   <div>
     <h2>👨‍💻 About Me</h2>
     <p>
       I am a third-year IT student who aspires to be an IT professional with a strong foundation in
-      <strong>programming, networking, and troubleshooting</strong>. Although I currently lack professional
-      experience, I am a reliable, adaptable, and curious individual who is always eager to learn. I’m passionate about solving problems and look forward to applying my technical skills in real-world environments.
+      <strong>programming, networking, and troubleshooting</strong>. I am a reliable, adaptable, and curious individual who is always eager to learn and passionate about applying my skills to real-world environments.
     </p>
   </div>
 </section>
 
 <section id="work">
   <h2>🛠️ My Work</h2>
-
   <div class="project">
     <h3>🏃 Awesome Athletics Club (AAC) System</h3>
-    <p>This is a full-stack project that allows club administrators to manage members, generate reports, register products, and more. It includes login/logout systems, validation, sorting/filtering, and a printable reporting feature. Designed with usability and functionality in mind.</p>
+    <p>A full-stack project for managing members, generating reports, registering products, and printing data. Includes login/logout, validation, sorting, and filters.</p>
     <p><strong>Technologies:</strong> C#, Windows Forms, SQL, .NET</p>
   </div>
-
   <div class="project">
     <h3>📂 Other Projects</h3>
     <p>Explore more of my work and other assignments on my GitHub profile.</p>
@@ -254,11 +260,10 @@
       <li>Programming: Python, C/C++, C#, Java</li>
       <li>Web: HTML + CSS</li>
       <li>Database: SQL</li>
-      <li>Networking: Cisco Packet Tracer (router/switch simulation)</li>
+      <li>Networking: Cisco Packet Tracer</li>
       <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
-      <li>Network & Hardware Troubleshooting</li>
+      <li>Hardware & Network Troubleshooting</li>
     </ul>
-
     <h3>Languages</h3>
     <p>Sesotho, IsiZulu, Setswana, English</p>
   </div>
@@ -268,13 +273,22 @@
   <h2>📞 Contact Me</h2>
   <p>Email: <a href="mailto:keletsoramothibe99@gmail.com">keletsoramothibe99@gmail.com</a></p>
   <p>Phone: 063 464 8207</p>
-
   <div class="socials">
     <p>Connect with me:</p>
     <a href="https://www.linkedin.com/in/keletso-ramothibe-793583376" target="_blank">LinkedIn</a>
     <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank">Facebook</a>
     <a href="https://github.com/kl99-chi" target="_blank">GitHub</a>
   </div>
+
+  <form action="https://formspree.io/f/xyzpwwok" method="POST" style="margin-top: 30px;">
+    <label>Name</label><br>
+    <input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
+    <label>Email</label><br>
+    <input type="email" name="email" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
+    <label>Message</label><br>
+    <textarea name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea><br>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
 </section>
 
 <section id="resume" style="text-align: center; padding: 40px 20px;">
@@ -285,15 +299,24 @@
   &copy; 2025 Keletso Ramothibe. All rights reserved.
 </footer>
 
+<!-- Theme Toggle Button -->
+<button id="theme-toggle" class="btn" style="position: fixed; bottom: 20px; right: 20px; z-index: 1001;">
+  🌙 Toggle Theme
+</button>
+
 <script>
+  // Smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
+  });
+
+  // Dark/Light mode toggle
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    document.documentElement.classList.toggle("light-mode"); // Toggle on html element too
   });
 </script>
 
