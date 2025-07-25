@@ -242,6 +242,81 @@
       background-color: #28a745; /* Keep green for success in light mode */
       color: white;
     }
+
+    /* Styles for the Temperature Converter */
+    .converter-container {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #0f172a; /* Dark background */
+      border-radius: 8px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center; /* Center items horizontally */
+    }
+    .light-mode .converter-container {
+      background-color: #e2e8f0; /* Light background */
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+    .converter-input-group {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping on small screens */
+      gap: 10px;
+      justify-content: center;
+      width: 100%;
+    }
+    .converter-input-group input[type="number"],
+    .converter-input-group select {
+      padding: 10px;
+      border: 1px solid #334155;
+      border-radius: 5px;
+      background-color: #1e293b;
+      color: #f1f5f9;
+      font-size: 16px;
+      box-sizing: border-box;
+      flex: 1; /* Allow inputs to grow */
+      min-width: 120px; /* Minimum width for inputs */
+    }
+    .light-mode .converter-input-group input[type="number"],
+    .light-mode .converter-input-group select {
+      background-color: #ffffff;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+    .converter-input-group select {
+      appearance: none; /* Remove default arrow */
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23f1f5f9%22%20d%3D%22M287%20197.3L159.9%2069.2c-3.7-3.7-9.7-3.7-13.4%200L5.4%20197.3c-3.7%203.7-3.7%209.7%200%2013.4l13.4%2013.4c3.7%203.7%209.7%203.7%2013.4%200l117.8-117.8c3.7-3.7%209.7-3.7%2013.4%200l117.8%20117.8c3.7%203.7%209.7%203.7%2013.4%200l13.4-13.4c3.7-3.7%203.7-9.7%200-13.4z%22%2F%3E%3C%2Fsvg%3E');
+      background-repeat: no-repeat;
+      background-position: right 8px top 50%;
+      background-size: 12px auto;
+      padding-right: 30px; /* Make space for the arrow */
+    }
+    .light-mode .converter-input-group select {
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%230f172a%22%20d%3D%22M287%20197.3L159.9%2069.2c-3.7-3.7-9.7-3.7-13.4%200L5.4%20197.3c-3.7%203.7-3.7%209.7%200%2013.4l13.4%2013.4c3.7%203.7%209.7%203.7%2013.4%200l117.8-117.8c3.7-3.7%209.7-3.7%2013.4%200l117.8%20117.8c3.7%203.7%209.7%203.7%2013.4%200l13.4-13.4c3.7-3.7%203.7-9.7%200-13.4z%22%2F%3E%3C%2Fsvg%3E');
+    }
+
+    #conversion-result {
+      margin-top: 10px;
+      padding: 15px;
+      background-color: #1e293b; /* Dark background for output */
+      border-radius: 8px;
+      border: 1px solid #334155;
+      min-height: 40px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #f1f5f9;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+      width: 100%; /* Take full width of container */
+      box-sizing: border-box;
+    }
+    .light-mode #conversion-result {
+      background-color: #ffffff;
+      color: #0f172a;
+      border-color: #cbd5e1;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
@@ -285,6 +360,32 @@
     <p>Explore more of my work and other assignments on my GitHub profile.</p>
     <p><strong>GitHub:</strong> <a href="https://github.com/kl99-chi" target="_blank">https://github.com/kl99-chi</a></p>
   </div>
+
+  <!-- New Feature: Temperature Converter -->
+  <div class="project" data-aos="fade-up">
+    <h3>🌡️ Temperature Converter</h3>
+    <p>Convert temperatures between Celsius, Fahrenheit, and Kelvin. This demonstrates basic JavaScript logic and user input handling.</p>
+    <div class="converter-container">
+      <div class="converter-input-group">
+        <input type="number" id="temp-input" placeholder="Enter temperature" step="any" />
+        <select id="from-unit">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+        <span>to</span>
+        <select id="to-unit">
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="celsius">Celsius (°C)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+      </div>
+      <button id="convert-btn" class="btn">Convert</button>
+      <div id="conversion-result"></div>
+    </div>
+  </div>
+  <!-- End New Feature -->
+
 </section>
 
 <section id="skills" data-aos="fade-up">
@@ -380,6 +481,56 @@
       }, 5000);
     }
   });
+
+  // Temperature Converter Logic
+  const tempInput = document.getElementById('temp-input');
+  const fromUnit = document.getElementById('from-unit');
+  const toUnit = document.getElementById('to-unit');
+  const convertBtn = document.getElementById('convert-btn');
+  const conversionResult = document.getElementById('conversion-result');
+
+  convertBtn.addEventListener('click', () => {
+    const temperature = parseFloat(tempInput.value);
+    const from = fromUnit.value;
+    const to = toUnit.value;
+    let result;
+
+    if (isNaN(temperature)) {
+      conversionResult.textContent = 'Please enter a valid number.';
+      return;
+    }
+
+    // Convert everything to Celsius first for easier conversion logic
+    let tempInCelsius;
+    if (from === 'celsius') {
+      tempInCelsius = temperature;
+    } else if (from === 'fahrenheit') {
+      tempInCelsius = (temperature - 32) * 5 / 9;
+    } else if (from === 'kelvin') {
+      tempInCelsius = temperature - 273.15;
+    }
+
+    // Convert from Celsius to the target unit
+    if (to === 'celsius') {
+      result = tempInCelsius;
+    } else if (to === 'fahrenheit') {
+      result = (tempInCelsius * 9 / 5) + 32;
+    } else if (to === 'kelvin') {
+      result = tempInCelsius + 273.15;
+    }
+
+    // Display the result, formatted to 2 decimal places
+    conversionResult.textContent = `${result.toFixed(2)} ${getUnitSymbol(to)}`;
+  });
+
+  function getUnitSymbol(unit) {
+    switch (unit) {
+      case 'celsius': return '°C';
+      case 'fahrenheit': return '°F';
+      case 'kelvin': return 'K';
+      default: return '';
+    }
+  }
 </script>
 
 </body>
