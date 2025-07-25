@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Keletso Ramothibe | Portfolio</title>
+  <link rel="icon" href="profile.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" xintegrity="sha512-yH8E8b1Ghj9Fx+QnNH5HPtNEsMXYvMNp8XZ3Kpnh2rRrcx2g4jZEK58v6XbO/fKkf6KtwYAT3pD1wrZjaJZX0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -122,7 +124,7 @@
       flex-direction: column;
       gap: 20px;
     }
-    .skills-container h3 {
+    .skills-container h3 { /* Added back specific styling for h3 in skills */
       color: #f1f5f9;
       margin-bottom: 10px;
     }
@@ -146,6 +148,7 @@
       margin: 0 10px;
       color: #38bdf8;
       text-decoration: none;
+      font-size: 20px; /* Keep font size for icons */
     }
     .socials a:hover {
       color: #60a5fa;
@@ -207,6 +210,20 @@
       background-color: #2563eb;
       color: #ffffff;
     }
+    /* Style for the custom message */
+    #form-message {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #28a745; /* Green for success */
+      color: white;
+      text-align: center;
+      display: none; /* Hidden by default */
+    }
+    .light-mode #form-message {
+      background-color: #28a745; /* Keep green for success in light mode */
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -248,14 +265,14 @@
   <div class="project">
     <h3>📂 Other Projects</h3>
     <p>Explore more of my work and other assignments on my GitHub profile.</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/kl99-chi" target="_blank">github.com/kl99-chi</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/kl99-chi" target="_blank">https://github.com/kl99-chi</a></p>
   </div>
 </section>
 
 <section id="skills">
   <h2>💡 Skills</h2>
   <div class="skills-container">
-    <h3>Technical Skills</h3>
+    <h3>Technical Skills</h3> <!-- Reinstated h3 -->
     <ul>
       <li>Programming: Python, C/C++, C#, Java</li>
       <li>Web: HTML + CSS</li>
@@ -264,7 +281,7 @@
       <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
       <li>Hardware & Network Troubleshooting</li>
     </ul>
-    <h3>Languages</h3>
+    <h3>Languages</h3> <!-- Reinstated h3 -->
     <p>Sesotho, IsiZulu, Setswana, English</p>
   </div>
 </section>
@@ -274,13 +291,12 @@
   <p>Email: <a href="mailto:keletsoramothibe99@gmail.com">keletsoramothibe99@gmail.com</a></p>
   <p>Phone: 063 464 8207</p>
   <div class="socials">
-    <p>Connect with me:</p>
-    <a href="https://www.linkedin.com/in/keletso-ramothibe-793583376" target="_blank">LinkedIn</a>
-    <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank">Facebook</a>
-    <a href="https://github.com/kl99-chi" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/keletso-ramothibe-793583376" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://github.com/kl99-chi" target="_blank"><i class="fab fa-github"></i></a>
   </div>
 
-  <form action="https://formspree.io/f/xyzpwwok" method="POST" style="margin-top: 30px;">
+  <form id="contact-form" action="https://formspree.io/f/xyzpwwok" method="POST" style="margin-top: 30px;">
     <label>Name</label><br>
     <input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
     <label>Email</label><br>
@@ -289,6 +305,7 @@
     <textarea name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea><br>
     <button type="submit" class="btn">Send Message</button>
   </form>
+  <div id="form-message"></div> <!-- Custom message div -->
 </section>
 
 <section id="resume" style="text-align: center; padding: 40px 20px;">
@@ -316,7 +333,40 @@
   // Dark/Light mode toggle
   document.getElementById("theme-toggle").addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
-    document.documentElement.classList.toggle("light-mode"); // Toggle on html element too
+    document.documentElement.classList.toggle("light-mode");
+  });
+
+  // Custom Form Submission Message
+  const contactForm = document.getElementById('contact-form');
+  const formMessage = document.getElementById('form-message');
+
+  contactForm.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const response = await fetch(contactForm.action, {
+      method: contactForm.method,
+      body: new FormData(contactForm),
+      headers: {
+          'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      formMessage.textContent = 'Thank you for your message! I will respond shortly.';
+      formMessage.style.display = 'block'; // Show the message
+      contactForm.reset(); // Clear the form
+      setTimeout(() => {
+        formMessage.style.display = 'none'; // Hide message after 5 seconds
+      }, 5000);
+    } else {
+      formMessage.textContent = 'Oops! There was an error sending your message. Please try again later.';
+      formMessage.style.backgroundColor = '#dc3545'; // Red for error
+      formMessage.style.display = 'block';
+      setTimeout(() => {
+        formMessage.style.display = 'none';
+        formMessage.style.backgroundColor = '#28a745'; // Reset color
+      }, 5000);
+    }
   });
 </script>
 
