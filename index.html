@@ -17,11 +17,18 @@
       --page-bg: #1e293b;
       --muted: #cbd5e1;
     }
-    body.light-theme .my-work-section {
-      color: #1a1a1a;
-    } 
-    body.dark-theme .my-work-section {
-      color: #f2f2f2;
+    /* Default (light theme) */
+    body {
+      --text-color: #1a1a1a;
+    }
+    
+    /* Dark theme */
+    body.dark-theme {
+      --text-color: #f2f2f2;
+    }
+    
+    .my-work-section {
+      color: var(--text-color);
     }
     body {
       font-family: Arial, sans-serif;
