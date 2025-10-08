@@ -1,504 +1,973 @@
 <!DOCTYPE html>
+
 <html lang="en" style="scroll-padding-top: 160px;">
+
 <head>
+
   <meta charset="utf-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Keletso Ramothibe | Portfolio</title>
+
   <link rel="icon" href="profile.jpg" type="image/jpeg" />
-  <!-- Font Awesome -->
+
+  <!-- Font Awesome (emojicons) -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- AOS -->
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
+
+
   <style>
+
     :root {
+
       --accent: #38bdf8;
+
       --card-bg: #0f172a;
+
       --page-bg: #1e293b;
+
       --muted: #cbd5e1;
+
     }
+
     body {
+
       font-family: Arial, sans-serif;
+
       background-color: var(--page-bg);
+
       color: #f1f5f9;
+
       margin: 0;
+
       padding: 0;
+
       transition: background-color 0.25s, color 0.25s;
+
     }
+
     header {
+
       background-color: #0b1120;
+
       padding: 18px 20px;
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
+
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+
       text-align: center;
+
     }
+
     header h1 { margin: 0; font-size: 28px; }
+
     header p { margin: 6px 0 0 0; color: #94a3b8; font-size: 14px; }
 
+
+
     .main-nav { margin-top: 12px; }
+
     .main-nav ul { list-style: none; padding:0; margin:0; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
     .main-nav a { color: var(--accent); text-decoration:none; font-weight:600; padding:6px 12px; border-radius:6px; }
+
     .main-nav a:hover { background:var(--accent); color:#0b1120; }
+
+
 
     .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
 
+
+
     section {
+
       background-color: var(--page-bg);
+
       border-radius: 10px;
+
       padding: 28px;
+
       margin-bottom: 28px;
+
       box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+
     }
+
     h2 {
+
       color: var(--accent);
+
       margin: 0 0 18px 0;
+
       text-align:center;
+
       border-bottom: 2px solid var(--accent);
+
       padding-bottom: 10px;
+
     }
+
+
 
     /* Projects grid */
+
     .projects-grid {
+
       display: grid;
+
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
       gap: 18px;
+
     }
+
     .project {
+
       background-color: var(--card-bg);
+
       padding: 18px;
+
       border-radius: 10px;
+
       box-shadow: 0 3px 8px rgba(2,6,23,0.6);
+
       transition: transform 0.18s ease, box-shadow 0.18s ease;
+
     }
+
     .project:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.7); }
+
     .project h3 { color: var(--accent); margin:0 0 8px 0; display:flex; gap:10px; align-items:center; font-size:18px; }
+
     .project p { color: var(--muted); margin: 6px 0 12px 0; line-height:1.45; }
 
+
+
     .btn {
+
       display:inline-block;
+
       background:#3b82f6;
+
       color:white;
+
       padding:8px 14px;
+
       border-radius:8px;
+
       text-decoration:none;
+
       font-weight:600;
+
       margin-right:8px;
-      cursor:pointer;
-      border:none;
+
     }
+
     .btn:hover { background:#2563eb; }
 
+
+
     /* Contact block */
+
     .contact-info {
+
       display:block;
+
       background: var(--card-bg);
+
       padding:18px;
+
       border-radius:10px;
+
       text-align:center;
+
       color:var(--muted);
+
       margin-bottom:12px;
+
     }
+
     .socials { display:flex; justify-content:center; gap:14px; margin-top:10px; }
+
     .socials a { color:var(--accent); font-size:20px; text-decoration:none; }
+
     .socials a:hover { color:#60a5fa; }
 
-    /* Form elements - CORRECTED to include 'select' */
-    input[type="text"], input[type="email"], textarea, select { 
+
+
+    /* Form elements */
+
+    input[type="text"], input[type="email"], textarea {
+
       width:100%;
+
       padding:10px;
+
       border-radius:6px;
+
       border:1px solid #334155;
+
       background:#0b1220;
+
       color:#f1f5f9;
+
       box-sizing:border-box;
+
       margin-bottom:12px;
+
     }
+
     textarea { resize:vertical; min-height:110px; }
 
+
+
     /* Temperature converter styles inside project */
+
     .converter-container { margin-top:8px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.04); }
 
+
+
     /* Light mode */
+
     .light-mode { background:#f1f5f9 !important; color:#0b1120 !important; }
+
     .light-mode header { background:#ffffff !important; color:#0b1120 !important; }
+
     .light-mode .project { background: #ffffff !important; color:#0b1120 !important; border:1px solid #e6eefc; }
-    .light-mode input, .light-mode textarea, .light-mode select { background:#ffffff; color:#0b1120; border:1px solid #cbd5e1; }
-    .light-mode .btn:hover { background: #60a5fa !important; } 
-    .light-mode #code-explanation { color:#334155 !important; border:1px solid #e6eefc !important; background:#f7f8f9 !important; }
-    .light-mode #conversion-result { color:#334155 !important; border:1px solid #e6eefc !important; background:#f7f8f9 !important; }
+
+    .light-mode input, .light-mode textarea { background:#ffffff; color:#0b1120; border:1px solid #cbd5e1; }
+
+
 
     footer { text-align:center; color:#9aa8bd; padding:18px 0; margin-top:10px; }
 
+
+
     /* Responsive minor tweaks */
+
     @media (max-width:420px) {
+
       header h1 { font-size:20px; }
+
       .main-nav a { font-size:13px; }
+
     }
-    /* Styling for the LLM response area */
-    #code-explanation {
-        white-space: pre-wrap; /* Respect line breaks and spaces */
-        line-height: 1.6;
-        font-size: 14px;
-    }
-    #code-explanation p {
-        margin: 0;
-    }
+
   </style>
+
 </head>
+
 <body>
 
+
+
 <header>
+
   <h1>Keletso Ramothibe</h1>
+
   <p>Aspiring IT Professional | Programmer | Problem Solver</p>
 
+
+
   <nav class="main-nav" aria-label="Main navigation">
+
     <ul>
+
       <li><a href="#about">About</a></li>
+
       <li><a href="#work">My Work</a></li>
+
       <li><a href="#skills">Skills</a></li>
+
       <li><a href="#contact">Contact</a></li>
+
       <li><a href="#resume">Resume</a></li>
+
     </ul>
+
   </nav>
+
 </header>
+
+
 
 <div class="container">
 
+
+
   <section id="about" data-aos="fade-right">
+
     <h2><i class="fa-solid fa-briefcase"></i>&nbsp;About me</h2>
+
     
+
     <div style="text-align:center;">
-      <!-- NOTE: Replace 'profile.jpg' with an external, absolute URL for your profile picture -->
+
       <img src="profile.jpg" alt="Profile Photo" width="160" style="border-radius:50%; border:4px solid var(--accent);" onerror="this.onerror=null;this.src='https://placehold.co/300x300/667eea/ffffff?text=Profile';">
+
     </div>
+
     <p style="text-align:center; margin-top:14px; color:var(--muted);">
+
       I am a third-year IT student who aspires to be an IT professional with a strong foundation in
+
       <strong>programming, networking, and troubleshooting</strong>. Reliable, adaptable, and eager to apply my skills to real-world challenges.
+
     </p>
+
   </section>
+
+
 
   <section id="work" data-aos="fade-up">
+
     <h2><i class="fa-solid fa-briefcase"></i>&nbsp;My Work</h2>
 
+
+
     <div class="projects-grid">
+
       <!-- AAC -->
+
       <article class="project" aria-labelledby="aac-title">
+
         <h3 id="aac-title"><i class="fa-solid fa-person-running"></i> Awesome Athletics Club (AAC) System</h3>
+
         <p>A full-stack project for managing members, generating reports, registering products, and printing data. Includes login/logout, input validation, sorting, and filters.</p>
+
         <p><strong>Technologies:</strong> C#, Windows Forms, SQL, .NET</p>
+
       </article>
+
+
 
       <!-- NWU Exchange App -->
+
       <article class="project" aria-labelledby="nwu-title">
+
         <h3 id="nwu-title"><i class="fa-solid fa-arrows-rotate"></i> NWU Exchange App</h3>
+
         <p>A convenient platform for buying, selling, and trading items between NWU students. Frontend-only web app built during the NWU Internal Hackathon using Firebase Studio and deployed on Vercel.</p>
+
         <a class="btn" href="https://nwu-exchange-app.vercel.app/" target="_blank" rel="noopener" style="background-color:#28a745; color:white; border:none;"><i class="fa-solid fa-link"></i>&nbsp;Visit App</a>
-        <!-- NOTE: Update the link below to an absolute URL if the file is not hosted relative to the page -->
+
         <a class="btn" href="K_RAMOTHIBE_CERTIFICATE.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-certificate"></i>&nbsp;View Hackathon Certificate</a>
+
       </article>
 
-      <!-- Code Explainer (UPDATED FOR GEMINI API) -->
+
+
+     <!-- Code Explainer (UPDATED FOR GEMINI API) -->
+
       <article class="project" aria-labelledby="explainer-title">
+
         <h3 id="explainer-title"><i class="fa-solid fa-code"></i> Code Explainer (Gemini API)</h3>
+
         <p>Paste code below and click <strong>Explain Code</strong>. The site will use the **Gemini API** directly to produce a clear, step-by-step explanation (frontend-only solution).</p>
 
+
+
         <textarea id="code-input" placeholder="Paste your code here... (e.g., a Python or C# function)" rows="7" style="background:#071022;color:#f1f5f9;border-radius:6px;border:1px solid #243449;"></textarea>
+
         <div style="margin-top:8px;">
+
           <button id="explain-btn" class="btn">Explain Code</button>
+
         </div>
+
         <div id="code-explanation" style="margin-top:12px; color:var(--muted); min-height:76px; border-radius:8px; padding:10px; border:1px solid rgba(255,255,255,0.03); background: rgba(255,255,255,0.01);">
-            <p>The explanation will appear here.</p>
-        </div>
+
+            <p>The explanation will appear here.</p>
+
+        </div>
+
       </article>
+
+
 
       <!-- Temperature Converter -->
+
       <article class="project" aria-labelledby="temp-title">
+
         <h3 id="temp-title"><i class="fa-solid fa-temperature-high"></i> Temperature Converter</h3>
+
         <p>Convert between Celsius, Fahrenheit, and Kelvin — demonstrates DOM handling and simple conversion logic.</p>
 
+
+
         <div class="converter-container">
+
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
+
             <input id="temp-input" type="number" placeholder="Temperature" style="flex:1; min-width:120px;">
+
             <select id="from-unit" style="min-width:140px;">
+
               <option value="celsius">Celsius (°C)</option>
+
               <option value="fahrenheit">Fahrenheit (°F)</option>
+
               <option value="kelvin">Kelvin (K)</option>
+
             </select>
+
             <span style="align-self:center;">→</span>
+
             <select id="to-unit" style="min-width:140px;">
+
               <option value="fahrenheit">Fahrenheit (°F)</option>
+
               <option value="celsius">Celsius (°C)</option>
+
               <option value="kelvin">Kelvin (K)</option>
+
             </select>
+
           </div>
+
           <div style="margin-top:10px;">
+
             <button id="convert-btn" class="btn">Convert</button>
+
           </div>
+
           <div id="conversion-result" style="margin-top:10px; padding:10px; border-radius:8px; min-height:44px; color:var(--muted); border:1px solid rgba(255,255,255,0.03);"></div>
+
         </div>
+
       </article>
+
+
 
       <!-- Other Projects -->
+
       <article class="project" aria-labelledby="other-title">
+
         <h3 id="other-title"><i class="fa-solid fa-folder-open"></i> Other Projects</h3>
+
         <p>Explore more of my projects and assignments on my GitHub profile.</p>
+
         <p><strong>GitHub:</strong> <a href="https://github.com/kl99-chi" target="_blank" rel="noopener">github.com/kl99-chi</a></p>
+
       </article>
 
+
+
     </div>
+
   </section>
+
+
 
   <section id="skills" data-aos="fade-up">
+
     <h2><i class="fa-solid fa-lightbulb"></i>&nbsp;Skills</h2>
+
     <ul style="color:var(--muted); list-style:none; padding:0; display:grid; gap:8px; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));">
+
       <li><i class="fa-solid fa-code"></i>&nbsp;Programming: Python, C#, Java, C++</li>
+
       <li><i class="fa-solid fa-globe"></i>&nbsp;Web: HTML, CSS</li>
+
       <li><i class="fa-solid fa-database"></i>&nbsp;Database: SQL</li>
+
       <li><i class="fa-solid fa-network-wired"></i>&nbsp;Networking: Cisco Packet Tracer</li>
+
       <li><i class="fa-solid fa-file-word"></i>&nbsp;Microsoft Office Suite</li>
+
       <li><i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Hardware & Network Troubleshooting</li>
+
     </ul>
+
   </section>
 
+
+
   <section id="contact" data-aos="fade-left">
+
     <h2><i class="fa-solid fa-envelope"></i>&nbsp;Contact Me</h2>
 
+
+
     <div class="contact-info" aria-hidden="false">
+
       <p style="margin:0;"><strong>Email:</strong> <a href="mailto:keletsoramothibe99@gmail.com">keletsoramothibe99@gmail.com</a></p>
+
       <p style="margin:6px 0 0 0;"><strong>Phone:</strong> 063 464 8207</p>
+
     </div>
 
+
+
     <!-- Contact form (your provided markup) -->
+
     <form id="contact-form" action="https://formspree.io/f/xyzpwwok" method="POST" style="margin-top: 18px;">
+
       <label>Name</label><br>
+
       <input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
+
       <label>Email</label><br>
+
       <input type="email" name="email" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
+
       <label>Message</label><br>
+
       <textarea name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea><br>
+
       <button type="submit" class="btn">Send Message</button>
+
     </form>
+
+
 
     <div id="form-message" role="status" style="margin-top:12px; display:none; padding:10px; border-radius:8px; color:white;"></div>
 
+
+
     <div class="socials" aria-label="Social links" style="margin-top:14px;">
+
       <a href="https://www.linkedin.com/in/keletso-ramothibe-793583376" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+
       <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+
       <a href="https://github.com/kl99-chi" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+
     </div>
+
   </section>
+
+
 
   <section id="resume" style="text-align:center;">
+
     <a href="KELETSO_Resume.pdf" class="btn" download><i class="fa-solid fa-file-pdf"></i>&nbsp;Download Resume</a>
+
   </section>
 
+
+
   <footer>
+
     &copy; 2025 Keletso Ramothibe. All rights reserved.
+
   </footer>
+
 </div>
 
+
+
 <!-- Theme Toggle (emojicon via Font Awesome) -->
+
 <button id="theme-toggle" class="btn" aria-label="Toggle theme" style="position:fixed;bottom:18px;right:18px;z-index:2000;">
+
   <i class="fa-solid fa-moon"></i>
+
 </button>
 
+
+
 <!-- Scripts -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 <script>
+
   AOS.init({ duration: 900, once: true });
 
+
+
   // Smooth-scrolling for internal links
+
   document.querySelectorAll('a[href^="#"]').forEach(a => {
+
     a.addEventListener('click', function (e) {
+
       e.preventDefault();
+
       const dest = document.querySelector(this.getAttribute('href'));
+
       if (dest) dest.scrollIntoView({ behavior: 'smooth' });
+
     });
+
   });
+
+
 
   // Theme toggle (uses Font Awesome icons as emojicons)
+
   const toggleBtn = document.getElementById('theme-toggle');
+
   toggleBtn.addEventListener('click', () => {
+
     document.body.classList.toggle('light-mode');
+
     document.documentElement.classList.toggle('light-mode');
+
     const icon = toggleBtn.querySelector('i');
+
     if (document.body.classList.contains('light-mode')) {
+
       icon.classList.remove('fa-moon'); icon.classList.add('fa-sun');
+
     } else {
+
       icon.classList.remove('fa-sun'); icon.classList.add('fa-moon');
+
     }
+
   });
 
+
+
   // Contact form submission to Formspree
+
   (function () {
+
     const contactForm = document.getElementById('contact-form');
+
     const formMessage = document.getElementById('form-message');
 
+
+
     contactForm.addEventListener('submit', async function (event) {
+
       event.preventDefault();
+
       formMessage.style.display = 'block';
-      formMessage.style.backgroundColor = '#3b82f6'; 
+
+      formMessage.style.backgroundColor = '#28a745';
+
       formMessage.style.color = '#fff';
+
       formMessage.textContent = 'Sending message...';
 
+
+
       try {
+
         const res = await fetch(contactForm.action, {
+
           method: contactForm.method,
+
           body: new FormData(contactForm),
+
           headers: { 'Accept': 'application/json' }
+
         });
 
+
+
         if (res.ok) {
-          formMessage.style.backgroundColor = '#28a745';
+
           formMessage.textContent = 'Thank you for your message! I will respond shortly.';
+
           contactForm.reset();
-          setTimeout(() => { formMessage.style.display = 'none'; formMessage.style.backgroundColor = '#3b82f6'; }, 5000);
+
+          setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+
         } else {
+
           const data = await res.json();
+
           formMessage.style.backgroundColor = '#dc3545';
+
           formMessage.textContent = data?.error || 'Oops! Something went wrong. Please try again.';
-          setTimeout(() => { formMessage.style.display = 'none'; formMessage.style.backgroundColor = '#3b82f6'; }, 5000);
+
+          setTimeout(() => { formMessage.style.display = 'none'; formMessage.style.backgroundColor = '#28a745'; }, 5000);
+
         }
+
       } catch (err) {
+
         console.error(err);
+
         formMessage.style.backgroundColor = '#dc3545';
+
         formMessage.textContent = 'Error: Unable to send message at the moment.';
-        setTimeout(() => { formMessage.style.display = 'none'; formMessage.style.backgroundColor = '#3b82f6'; }, 5000);
+
+        setTimeout(() => { formMessage.style.display = 'none'; formMessage.style.backgroundColor = '#28a745'; }, 5000);
+
       }
+
     });
+
   })();
+
+
 
   // Temperature converter logic
+
   (function () {
+
     const tempInput = document.getElementById('temp-input');
+
     const fromUnit = document.getElementById('from-unit');
+
     const toUnit = document.getElementById('to-unit');
+
     const convertBtn = document.getElementById('convert-btn');
+
     const conversionResult = document.getElementById('conversion-result');
 
+
+
     convertBtn?.addEventListener('click', () => {
+
       const temperature = parseFloat(tempInput.value);
+
       const from = fromUnit.value;
+
       const to = toUnit.value;
+
       let result;
+
       if (isNaN(temperature)) {
+
         conversionResult.textContent = 'Please enter a valid number.';
+
         return;
+
       }
+
       let tempInCelsius;
+
       if (from === 'celsius') tempInCelsius = temperature;
+
       else if (from === 'fahrenheit') tempInCelsius = (temperature - 32) * 5 / 9;
+
       else tempInCelsius = temperature - 273.15;
 
+
+
       if (to === 'celsius') result = tempInCelsius;
+
       else if (to === 'fahrenheit') result = (tempInCelsius * 9 / 5) + 32;
+
       else result = tempInCelsius + 273.15;
 
+
+
       function getUnitSymbol(u) {
+
         if (u === 'celsius') return '°C';
+
         if (u === 'fahrenheit') return '°F';
+
         return 'K';
+
       }
+
       conversionResult.textContent = `${result.toFixed(2)} ${getUnitSymbol(to)}`;
+
     });
+
   })();
+
+
 
   // --- Gemini API Logic ---
 
+
+
   // Utility function for fetching with exponential backoff
+
   const fetchWithRetry = async (url, options, maxRetries = 5) => {
+
     for (let i = 0; i < maxRetries; i++) {
+
       try {
+
         const response = await fetch(url, options);
+
         if (response.ok) return response;
-        
-        // If response is not OK (e.g., 429, 500, or the reported 403) and we have retries left
+
+        
+
+        // If response is not OK (e.g., 429, 500) and we have retries left
+
         if (i < maxRetries - 1) {
+
           const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+
           await new Promise(resolve => setTimeout(resolve, delay));
+
         } else {
-          // Last retry failed, throw error including status
+
+          // Last retry failed, throw error
+
           throw new Error(`API call failed with status: ${response.status}`);
+
         }
+
       } catch (error) {
+
         if (i === maxRetries - 1) throw error;
+
         const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+
         await new Promise(resolve => setTimeout(resolve, delay));
+
       }
+
     }
+
     throw new Error("Exceeded maximum retries.");
+
   };
 
+
+
   // Code Explainer: uses Google Gemini API directly
+
   (function () {
+
     const explainBtn = document.getElementById('explain-btn');
+
     const codeInput = document.getElementById('code-input');
+
     const codeExplanation = document.getElementById('code-explanation');
+
     // NOTE: The environment will provide the API key at runtime if left as an empty string.
-    const apiKey = ""; 
+
+    const apiKey = ""; 
+
     // The model endpoint
+
     const model = "gemini-2.5-flash-preview-05-20";
 
+
+
     explainBtn?.addEventListener('click', async () => {
+
       const userCode = codeInput.value.trim();
+
       if (!userCode) {
+
         codeExplanation.innerHTML = "<p style='color:#f87171;'>Please paste your code first!</p>";
+
         return;
+
       }
-      
+
+      
+
       // Loading state with spinner
+
       codeExplanation.innerHTML = `<p style="color:var(--accent);"><i class="fa-solid fa-spinner fa-spin-pulse"></i> Explaining code, please wait...</p>`;
 
+
+
       try {
+
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-        
+
+        
+
         const systemPrompt = "You are an expert code explainer. Analyze the provided code snippet and generate a clear, concise, and professional step-by-step explanation of what the code does, including the language it is written in and its primary function. Format the explanation using Markdown and ensure all list items or steps are clear and easy to read. Do not include any external links or citations.";
-        
+
+        
+
         const payload = {
+
           contents: [{ parts: [{ text: `Explain the following code snippet:\n\n\`\`\`\n${userCode}\n\`\`\`` }] }],
+
           systemInstruction: {
+
             parts: [{ text: systemPrompt }]
+
           },
+
         };
 
+
+
         const response = await fetchWithRetry(apiUrl, {
+
           method: 'POST',
+
           headers: { 'Content-Type': 'application/json' },
+
           body: JSON.stringify(payload)
+
         });
 
+
+
         const result = await response.json();
+
         const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
 
+
+
         if (text) {
+
           // Simple Markdown to HTML conversion for display
+
           let formattedText = text
-                                .replace(/##\s(.*?)\n/g, '<h3>$1</h3>') 
+
+                                .replace(/##\s(.*?)\n/g, '<h3>$1</h3>') 
+
                                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                .replace(/^- (.*)/gm, '<li>$1</li>') 
-                                .replace(/\n\n/g, '<p>') 
-                                .replace(/\n/g, '<br>'); 
-          
+
+                                .replace(/^- (.*)/gm, '<li>$1</li>') 
+
+                                .replace(/\n\n/g, '<p>') // Double line breaks become paragraphs
+
+                                .replace(/\n/g, '<br>'); // Single line breaks become <br>
+
+          
+
           // Basic clean-up for initial display
+
           if (!formattedText.startsWith('<h3>') && !formattedText.startsWith('<p>') && !formattedText.startsWith('<li>')) {
+
             formattedText = `<p>${formattedText}</p>`;
+
           }
 
+
+
           codeExplanation.innerHTML = formattedText;
+
         } else {
-          const errorMessage = result.error?.message || "Could not generate explanation due to an API error. Check the console for details.";
+
+          const errorMessage = result.error?.message || "Could not generate explanation due to an API error.";
+
           codeExplanation.innerHTML = `<p style='color:#f87171;'>Error: ${errorMessage}</p>`;
+
         }
 
+
+
       } catch (err) {
+
         console.error("Gemini API Error:", err);
+
         codeExplanation.innerHTML = `<p style='color:#f87171;'>Error: Unable to connect to the explanation service. (${err.message})</p>`;
+
       }
+
     });
+
   })();
+
 </script>
 
+
+
 </body>
+
 </html>
