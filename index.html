@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en" style="scroll-padding-top: 160px;">
 <head>
@@ -5,11 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Keletso Ramothibe | Portfolio</title>
   <link rel="icon" href="profile.jpg" type="image/jpeg" />
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- AOS Animations -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
   <style>
@@ -19,6 +16,7 @@
       color: #f1f5f9;
       margin: 0;
       padding: 0;
+      transition: background-color 0.3s, color 0.3s;
     }
     header {
       background-color: #1e293b;
@@ -27,37 +25,16 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .header-content {
       text-align: center;
-      margin-bottom: 20px;
-    }
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 18px;
-      color: #94a3b8;
-      margin-bottom: 0;
-    }
-    .main-nav {
-      width: 100%;
-      background-color: #1e293b;
-      padding: 10px 0;
-      border-top: 1px solid #334155;
     }
     .main-nav ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 20px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
     }
     .main-nav a {
       color: #38bdf8;
@@ -65,7 +42,7 @@
       font-weight: bold;
       padding: 8px 15px;
       border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: all 0.3s ease;
     }
     .main-nav a:hover {
       background-color: #38bdf8;
@@ -73,20 +50,18 @@
     }
     .btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 10px;
       padding: 10px 20px;
       background-color: #3b82f6;
       color: white;
-      text-decoration: none;
       border-radius: 5px;
-      transition: background-color 0.3s ease;
+      text-decoration: none;
+      transition: background-color 0.3s;
     }
-    .btn:hover {
-      background-color: #2563eb;
-    }
+    .btn:hover { background-color: #2563eb; }
     section {
       padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       background-color: #1e293b;
       border-radius: 10px;
@@ -100,232 +75,73 @@
       margin-bottom: 30px;
       text-align: center;
     }
+
+    /* Grid for My Work */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
     .project {
       background-color: #0f172a;
       padding: 20px;
       border-radius: 10px;
-      margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
     }
     .project h3 {
-      color: #f1f5f9;
+      color: #38bdf8;
       margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .project p {
-      color: #cbd5e1;
       margin-bottom: 10px;
     }
-    .project strong {
-      color: #f1f5f9;
-    }
-    .project a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-    .project a:hover {
-      text-decoration: underline;
-    }
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .skills-container h3 {
-      color: #f1f5f9;
-      margin-bottom: 10px;
-    }
-    .skills-container ul {
-      list-style-type: disc;
-      padding-left: 25px;
-      color: #cbd5e1;
-    }
-    .skills-container p {
-      color: #cbd5e1;
+
+    .contact-info {
+      text-align: center;
+      background-color: #0f172a;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
     }
     footer {
       text-align: center;
       background-color: #1e293b;
       padding: 20px;
-      font-size: 14px;
       color: #94a3b8;
-      border-top: 1px solid #334155;
     }
     .socials a {
       margin: 0 10px;
       color: #38bdf8;
-      text-decoration: none;
       font-size: 20px;
+      text-decoration: none;
     }
-    .socials a:hover {
-      color: #60a5fa;
-    }
-    #about {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-      justify-content: center;
-      text-align: center;
-    }
-    #about img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #38bdf8;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
-    }
-    #about div {
-      flex: 1;
-      min-width: 280px;
-      text-align: left;
-    }
-    #about h2 {
-      text-align: left;
-    }
-    @media (min-width: 768px) {
-      #about {
-        justify-content: space-between;
-        text-align: left;
-      }
-      #about img {
-        width: 300px;
-        height: 300px;
-      }
-    }
+    .socials a:hover { color: #60a5fa; }
+
+    /* Light Mode */
     .light-mode {
       background-color: #f1f5f9 !important;
-      color: #0f172a !important; /* General text color for light mode */
+      color: #0f172a !important;
     }
     .light-mode header,
     .light-mode section,
-    .light-mode footer,
-    .light-mode .project {
+    .light-mode footer {
       background-color: #ffffff !important;
-      color: #0f172a !important; /* Ensure main blocks have dark text */
-      border-color: #e2e8f0 !important;
-    }
-    .light-mode a {
-      color: #2563eb !important;
-    }
-    .light-mode .btn {
-      background-color: #2563eb !important;
-      color: white !important;
-    }
-    .light-mode .main-nav a:hover {
-      background-color: #2563eb;
-      color: #ffffff;
-    }
-    /* Specific text elements that need darker color in light mode */
-    .light-mode .project p,
-    .light-mode .project strong,
-    .light-mode .skills-container ul,
-    .light-mode .skills-container p {
-      color: #343a40 !important; /* A slightly softer dark gray for readability */
-    }
-    /* New rule for the specific h3 elements */
-    .light-mode .project h3,
-    .light-mode .skills-container h3 {
-      color: #0f172a !important; /* Darker color for headings in light mode */
-    }
-    /* Style for the custom message */
-    #form-message {
-      margin-top: 20px;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: #28a745; /* Green for success */
-      color: white;
-      text-align: center;
-      display: none; /* Hidden by default */
-    }
-    .light-mode #form-message {
-      background-color: #28a745; /* Keep green for success in light mode */
-      color: white;
-    }
-
-    /* Styles for the Temperature Converter */
-    .converter-container {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #0f172a; /* Dark background */
-      border-radius: 8px;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      align-items: center; /* Center items horizontally */
-    }
-    .light-mode .converter-container {
-      background-color: #e2e8f0; /* Light background */
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-    }
-    .converter-input-group {
-      display: flex;
-      flex-wrap: wrap; /* Allow wrapping on small screens */
-      gap: 10px;
-      justify-content: center;
-      width: 100%;
-    }
-    .converter-input-group input[type="number"],
-    .converter-input-group select {
-      padding: 10px;
-      border: 1px solid #334155;
-      border-radius: 5px;
-      background-color: #1e293b;
-      color: #f1f5f9;
-      font-size: 16px;
-      box-sizing: border-box;
-      flex: 1; /* Allow inputs to grow */
-      min-width: 120px; /* Minimum width for inputs */
-    }
-    .light-mode .converter-input-group input[type="number"],
-    .light-mode .converter-input-group select {
-      background-color: #ffffff;
-      color: #0f172a;
-      border-color: #cbd5e1;
-    }
-    .converter-input-group select {
-      appearance: none; /* Remove default arrow */
-      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23f1f5f9%22%20d%3D%22M287%20197.3L159.9%2069.2c-3.7-3.7-9.7-3.7-13.4%200L5.4%20197.3c-3.7%203.7-3.7%209.7%200%2013.4l13.4%2013.4c3.7%203.7%209.7%203.7%2013.4%200l117.8-117.8c3.7-3.7%209.7-3.7%2013.4%200l117.8%20117.8c3.7%203.7%209.7%203.7%2013.4%200l13.4-13.4c3.7-3.7%203.7-9.7%200-13.4z%22%2F%3E%3C%2Fsvg%3E');
-      background-repeat: no-repeat;
-      background-position: right 8px top 50%;
-      background-size: 12px auto;
-      padding-right: 30px; /* Make space for the arrow */
-    }
-    .light-mode .converter-input-group select {
-      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%230f172a%22%20d%3D%22M287%20197.3L159.9%2069.2c-3.7-3.7-9.7-3.7-13.4%200L5.4%20197.3c-3.7%203.7-3.7%209.7%200%2013.4l13.4%2013.4c3.7%203.7%209.7%203.7%2013.4%200l117.8-117.8c3.7-3.7%209.7-3.7%2013.4%200l117.8%20117.8c3.7%203.7%209.7%203.7%2013.4%200l13.4-13.4c3.7-3.7%203.7-9.7%200-13.4z%22%2F%3E%3C%2Fsvg%3E');
-    }
-
-    #conversion-result {
-      margin-top: 10px;
-      padding: 15px;
-      background-color: #1e293b; /* Dark background for output */
-      border-radius: 8px;
-      border: 1px solid #334155;
-      min-height: 40px;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #f1f5f9;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
-      width: 100%; /* Take full width of container */
-      box-sizing: border-box;
-    }
-    .light-mode #conversion-result {
-      background-color: #ffffff;
-      color: #0f172a;
-      border-color: #cbd5e1;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+      color: #0f172a !important;
     }
   </style>
 </head>
-<body>
 
+<body>
 <header>
-  <div class="header-content">
-    <h1>Keletso Ramothibe</h1>
-    <p>Aspiring IT Professional | Programmer | Problem Solver</p>
-  </div>
+  <h1>Keletso Ramothibe</h1>
+  <p>Aspiring IT Professional | Programmer | Problem Solver</p>
   <nav class="main-nav">
     <ul>
       <li><a href="#about">About</a></li>
@@ -338,101 +154,58 @@
 </header>
 
 <section id="about" data-aos="fade-right">
-  <img src="profile.jpg" alt="Profile Photo" onerror="this.onerror=null;this.src='https://placehold.co/300x300/667eea/ffffff?text=Profile';" />
-  <div>
-    <h2><i class="fa-solid fa-user-pen"></i> About Me</h2>
-    <p>
-      I am a third-year IT student who aspires to be an IT professional with a strong foundation in
-      <strong>programming, networking, and troubleshooting</strong>. I am a reliable, adaptable, and curious individual who is always eager to learn and passionate about applying my skills to real-world environments.
-    </p>
+  <div style="text-align:center;">
+    <img src="profile.jpg" alt="Profile Photo" width="200" style="border-radius:50%;border:4px solid #38bdf8;">
   </div>
+  <p style="text-align:center;margin-top:15px;">
+    I am a third-year IT student who aspires to be an IT professional with a strong foundation in
+    <strong>programming, networking, and troubleshooting</strong>. Reliable, adaptable, and eager to apply my skills to real-world challenges.
+  </p>
 </section>
 
 <section id="work" data-aos="fade-up">
-  <h2><i class="fa-solid fa-gear"></i> My Work</h2>
-  <div class="project">
-    <h3><i class="fa-solid fa-running"></i> Awesome Athletics Club (AAC) System</h3>
-    <p>A full-stack project for managing members, generating reports, registering products, and printing data. Includes login/logout, validation, sorting, and filters.</p>
-    <p><strong>Technologies:</strong> C#, Windows Forms, SQL, .NET</p>
-  </div>
-  <!-- NWU Exchange App Project -->
-  <div class="project" style="background-color:#0f172a; padding:20px; border-radius:10px; margin-top:20px;">
-    <h3><i class="fa-solid fa-arrows-rotate"></i> NWU Exchange App</h3>
-    <p>A convenient platform for buying, selling, and trading items between NWU students. 
-       The system is a frontend-only web app developed during the NWU Internal Hackathon.</p>
-  
-    <a href="https://nwu-exchange-app.vercel.app/" target="_blank" class="btn" style="margin-right:10px;">
-      Visit NWU Exchange App
-    </a>
-  
-    <a href="K%20RAMOTHIBE%20CERTIFICATE.pdf" target="_blank" class="btn">
-      View Hackathon Certificate
-    </a>
-  </div>
-  <div class="project">
-    <h3><i class="fa-solid fa-folder-open"></i> Other Projects</h3>
-    <p>Explore more of my work and other assignments on my GitHub profile.</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/kl99-chi" target="_blank">https://github.com/kl99-chi</a></p>
-  </div>
+  <h2><i class="fa-solid fa-briefcase"></i> My Work</h2>
 
-  <!-- Code Explainer -->
-<div class="project" style="background-color:#0f172a; padding:20px; border-radius:10px; margin-top:20px;">
-  <h3><i class="fa-solid fa-code"></i> Code Explainer</h3>
-  <p>Paste your code below, and the system will provide a step-by-step explanation.</p>
-  
-  <textarea id="code-input" placeholder="Paste your code here..." rows="8" style="width:100%; padding:10px; border-radius:5px; border:1px solid #334155; background-color:#1e293b; color:#f1f5f9;"></textarea>
-  
-  <button id="explain-btn" class="btn" style="margin-top:10px;">Explain Code</button>
-  
-  <div id="code-explanation" style="margin-top:20px; padding:15px; border-radius:8px; background-color:#0f172a; border:1px solid #334155; min-height:50px; color:#cbd5e1;"></div>
-</div>
+  <div class="projects-grid">
+    <div class="project">
+      <h3><i class="fa-solid fa-person-running"></i> Awesome Athletics Club (AAC) System</h3>
+      <p>A full-stack project for managing members, generating reports, registering products, and printing data. Includes login/logout, validation, sorting, and filters.</p>
+      <p><strong>Technologies:</strong> C#, Windows Forms, SQL, .NET</p>
+    </div>
 
-  <!-- Temperature Converter Project -->
-  <div class="project" data-aos="fade-up">
-    <h3><i class="fa-solid fa-temperature-high"></i> Temperature Converter</h3>
-    <p>Convert temperatures between Celsius, Fahrenheit, and Kelvin. This demonstrates basic JavaScript logic and user input handling.</p>
-    <div class="converter-container">
-      <div class="converter-input-group">
-        <input type="number" id="temp-input" placeholder="Enter temperature" step="any" />
-        <select id="from-unit">
-          <option value="celsius">Celsius (°C)</option>
-          <option value="fahrenheit">Fahrenheit (°F)</option>
-          <option value="kelvin">Kelvin (K)</option>
-        </select>
-        <span>to</span>
-        <select id="to-unit">
-          <option value="fahrenheit">Fahrenheit (°F)</option>
-          <option value="celsius">Celsius (°C)</option>
-          <option value="kelvin">Kelvin (K)</option>
-        </select>
-      </div>
-      <button id="convert-btn" class="btn">Convert</button>
-      <div id="conversion-result"></div>
+    <div class="project">
+      <h3><i class="fa-solid fa-arrows-rotate"></i> NWU Exchange App</h3>
+      <p>A convenient platform for buying, selling, and trading items between NWU students. Developed during the NWU Internal Hackathon using Firebase Studio and deployed via Vercel.</p>
+      <a href="https://nwu-exchange-app.vercel.app/" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Visit App</a>
+      <a href="K_RAMOTHIBE_CERTIFICATE.pdf" target="_blank" class="btn"><i class="fa-solid fa-certificate"></i> Certificate</a>
+    </div>
+
+    <div class="project">
+      <h3><i class="fa-solid fa-folder-open"></i> Other Projects</h3>
+      <p>Explore more of my projects and assignments on my GitHub profile.</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/kl99-chi" target="_blank">github.com/kl99-chi</a></p>
     </div>
   </div>
 </section>
 
 <section id="skills" data-aos="fade-up">
   <h2><i class="fa-solid fa-lightbulb"></i> Skills</h2>
-  <div class="skills-container">
-    <h3>Technical Skills</h3>
-    <ul>
-      <li>Programming: Python, C/C++, C#, Java</li>
-      <li>Web: HTML + CSS</li>
-      <li>Database: SQL</li>
-      <li>Networking: Cisco Packet Tracer</li>
-      <li>Microsoft Office Suite</li>
-      <li>Hardware & Network Troubleshooting</li>
-    </ul>
-    <h3>Languages</h3>
-    <p>Sesotho, IsiZulu, Setswana, English</p>
-  </div>
+  <ul>
+    <li><i class="fa-solid fa-code"></i> Programming: Python, C#, Java, C++</li>
+    <li><i class="fa-solid fa-globe"></i> Web: HTML, CSS</li>
+    <li><i class="fa-solid fa-database"></i> Database: SQL</li>
+    <li><i class="fa-solid fa-network-wired"></i> Networking: Cisco Packet Tracer</li>
+    <li><i class="fa-solid fa-file-word"></i> Microsoft Office Suite</li>
+    <li><i class="fa-solid fa-screwdriver-wrench"></i> Hardware & Network Troubleshooting</li>
+  </ul>
 </section>
 
 <section id="contact" data-aos="fade-left">
-  <h2><i class="fa-solid fa-phone"></i> Contact Me</h2>
-  <p>Email: <a href="mailto:keletsoramothibe99@gmail.com">keletsoramothibe99@gmail.com</a></p>
-  <p>Phone: 063 464 8207</p>
+  <h2><i class="fa-solid fa-envelope"></i> Contact Me</h2>
+  <div class="contact-info">
+    <p>Email: <a href="mailto:keletsoramothibe99@gmail.com">keletsoramothibe99@gmail.com</a></p>
+    <p>Phone: 063 464 8207</p>
+  </div>
   <div class="socials">
     <a href="https://www.linkedin.com/in/keletso-ramothibe-793583376" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -440,153 +213,44 @@
   </div>
 </section>
 
-  <form id="contact-form" action="https://formspree.io/f/xyzpwwok" method="POST" style="margin-top: 30px;">
-    <label>Name</label><br>
-    <input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
-    <label>Email</label><br>
-    <input type="email" name="email" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
-    <label>Message</label><br>
-    <textarea name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea><br>
-    <button type="submit" class="btn">Send Message</button>
-  </form>
-  <div id="form-message"></div>
-</section>
-
-<section id="resume" data-aos="zoom-in" style="text-align: center; padding: 40px 20px;">
-  <a href="KELETSO_Resume.pdf" class="btn" download>📄 Download My Resume</a>
+<section id="resume" style="text-align:center;">
+  <a href="KELETSO_Resume.pdf" class="btn" download><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
 </section>
 
 <footer>
   &copy; 2025 Keletso Ramothibe. All rights reserved.
 </footer>
 
-<!-- Theme Toggle Button -->
-<button id="theme-toggle" class="btn" style="position: fixed; bottom: 20px; right: 20px; z-index: 1001;">
-  🌙 Toggle Theme
+<button id="theme-toggle" class="btn" style="position:fixed;bottom:20px;right:20px;z-index:1001;">
+  <i class="fa-solid fa-moon"></i>
 </button>
 
-<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
       e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
   });
 
-  document.getElementById("theme-toggle").addEventListener("click", () => {
+  // Theme toggle
+  const toggleBtn = document.getElementById("theme-toggle");
+  toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
     document.documentElement.classList.toggle("light-mode");
-  });
 
-  const contactForm = document.getElementById('contact-form');
-  const formMessage = document.getElementById('form-message');
-  contactForm.addEventListener('submit', async function(event) {
-    event.preventDefault();
-    const response = await fetch(contactForm.action, {
-      method: contactForm.method,
-      body: new FormData(contactForm),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (response.ok) {
-      formMessage.textContent = 'Thank you for your message! I will respond shortly.';
-      formMessage.style.display = 'block';
-      contactForm.reset();
-      setTimeout(() => formMessage.style.display = 'none', 5000);
+    const icon = toggleBtn.querySelector("i");
+    if (document.body.classList.contains("light-mode")) {
+      icon.classList.replace("fa-moon", "fa-sun");
     } else {
-      formMessage.textContent = 'Oops! Something went wrong. Please try again.';
-      formMessage.style.backgroundColor = '#dc3545';
-      formMessage.style.display = 'block';
-      setTimeout(() => {
-        formMessage.style.display = 'none';
-        formMessage.style.backgroundColor = '#28a745';
-      }, 5000);
-    }
-  });
-
-  // Temperature Converter Logic
-  const tempInput = document.getElementById('temp-input');
-  const fromUnit = document.getElementById('from-unit');
-  const toUnit = document.getElementById('to-unit');
-  const convertBtn = document.getElementById('convert-btn');
-  const conversionResult = document.getElementById('conversion-result');
-
-  convertBtn.addEventListener('click', () => {
-    const temperature = parseFloat(tempInput.value);
-    const from = fromUnit.value;
-    const to = toUnit.value;
-    let result;
-
-    if (isNaN(temperature)) {
-      conversionResult.textContent = 'Please enter a valid number.';
-      return;
-    }
-
-    // Convert everything to Celsius first for easier conversion logic
-    let tempInCelsius;
-    if (from === 'celsius') {
-      tempInCelsius = temperature;
-    } else if (from === 'fahrenheit') {
-      tempInCelsius = (temperature - 32) * 5 / 9;
-    } else if (from === 'kelvin') {
-      tempInCelsius = temperature - 273.15;
-    }
-
-    // Convert from Celsius to the target unit
-    if (to === 'celsius') {
-      result = tempInCelsius;
-    } else if (to === 'fahrenheit') {
-      result = (tempInCelsius * 9 / 5) + 32;
-    } else if (to === 'kelvin') {
-      result = tempInCelsius + 273.15;
-    }
-
-    // Display the result, formatted to 2 decimal places
-    conversionResult.textContent = `${result.toFixed(2)} ${getUnitSymbol(to)}`;
-  });
-
-  function getUnitSymbol(unit) {
-    switch (unit) {
-      case 'celsius': return '°C';
-      case 'fahrenheit': return '°F';
-      case 'kelvin': return 'K';
-      default: return '';
-    }
-  }
-</script>
-
-<script>
-  const explainBtn = document.getElementById('explain-btn');
-  const codeInput = document.getElementById('code-input');
-  const codeExplanation = document.getElementById('code-explanation');
-
-  explainBtn.addEventListener('click', async () => {
-    const userCode = codeInput.value.trim();
-    if (!userCode) {
-      codeExplanation.textContent = "Please paste your code first!";
-      return;
-    }
-
-    codeExplanation.textContent = "Explaining code, please wait...";
-
-    try {
-      const response = await fetch("http://localhost:5000/explain-code", { // your backend URL
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code: userCode })
-      });
-
-      const data = await response.json();
-      codeExplanation.textContent = data.explanation || "Could not generate explanation.";
-    } catch (err) {
-      codeExplanation.textContent = "Error: Unable to explain the code at the moment.";
-      console.error(err);
+      icon.classList.replace("fa-sun", "fa-moon");
     }
   });
 </script>
-
 </body>
 </html>
+```
