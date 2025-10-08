@@ -362,16 +362,16 @@
   </div>
 
   <!-- Code Explainer -->
-  <div class="project" style="background-color:#0f172a; padding:20px; border-radius:10px; margin-top:20px;">
-    <h3><i class="fa-solid fa-code"></i> Code Explainer</h3>
-    <p>Paste your code below, and the system will provide a step-by-step explanation of what the code does.</p>
-    
-    <textarea id="code-input" placeholder="Paste your code here..." rows="8" style="width:100%; padding:10px; border-radius:5px; border:1px solid #334155; background-color:#1e293b; color:#f1f5f9;"></textarea>
-    
-    <button id="explain-btn" class="btn" style="margin-top:10px;">Explain Code</button>
-    
-    <div id="code-explanation" style="margin-top:20px; padding:15px; border-radius:8px; background-color:#0f172a; border:1px solid #334155; min-height:50px; color:#cbd5e1;"></div>
-  </div>
+<div class="project" style="background-color:#0f172a; padding:20px; border-radius:10px; margin-top:20px;">
+  <h3><i class="fa-solid fa-code"></i> Code Explainer</h3>
+  <p>Paste your code below, and the system will provide a step-by-step explanation.</p>
+  
+  <textarea id="code-input" placeholder="Paste your code here..." rows="8" style="width:100%; padding:10px; border-radius:5px; border:1px solid #334155; background-color:#1e293b; color:#f1f5f9;"></textarea>
+  
+  <button id="explain-btn" class="btn" style="margin-top:10px;">Explain Code</button>
+  
+  <div id="code-explanation" style="margin-top:20px; padding:15px; border-radius:8px; background-color:#0f172a; border:1px solid #334155; min-height:50px; color:#cbd5e1;"></div>
+</div>
 
   <!-- Temperature Converter Project -->
   <div class="project" data-aos="fade-up">
@@ -559,15 +559,13 @@
     codeExplanation.textContent = "Explaining code, please wait...";
 
     try {
-      // Example: Using OpenAI API
-      const response = await fetch("YOUR_API_ENDPOINT", { // replace with your backend endpoint
+      const response = await fetch("http://localhost:5000/explain-code", { // your backend URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code: userCode })
       });
 
       const data = await response.json();
-      // Assuming the API returns { explanation: "..." }
       codeExplanation.textContent = data.explanation || "Could not generate explanation.";
     } catch (err) {
       codeExplanation.textContent = "Error: Unable to explain the code at the moment.";
