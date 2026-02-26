@@ -47,7 +47,7 @@ You can view the live version here: https://keletso-ramothibe-portfolio-website.
 
 ## Contact
 - **Email:** keletsoramothibe99@gmail.com
-- **LinkedIn:** www.linkedin.com/in/keletso-ramothibe-793583376
+- **LinkedIn:** https://www.linkedin.com/in/keletso-ramothibe-292254365
 - **GitHub:** https://github.com/kl99-chi
 
 ---
