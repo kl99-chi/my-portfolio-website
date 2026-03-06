@@ -6,6 +6,7 @@ This repository contains the codebase for my personal portfolio website, serving
 - [About](#about)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Learning & Certifications](#learning--certifications)
 - [Setup Instructions (Local)](#setup-instructions-local)
 - [Deployment](#deployment)
 - [Contact](#contact)
@@ -26,6 +27,15 @@ This website is designed to provide a comprehensive overview of my academic back
 - **HTML5:** For structuring the web content.
 - **CSS3:** For styling and layout, ensuring an aesthetically pleasing and responsive design.
 - **JavaScript:** For interactive elements like smooth scrolling navigation.
+
+## Learning & Certifications
+I actively pursue continuous learning to expand my technical knowledge. Recent certifications include:
+
+- **MATLAB Onramp** – MathWorks
+- **Machine Learning Onramp** – MathWorks
+- **Microsoft Applied Skills: Configure and Migrate to Azure Database for PostgreSQL** *(Currently in progress)*
+
+These courses strengthen my skills in programming, machine learning fundamentals, and cloud database technologies.
 
 ## Setup Instructions (Local)
 To view this portfolio website locally on your machine:
