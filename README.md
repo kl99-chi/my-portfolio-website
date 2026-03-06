@@ -1,6 +1,6 @@
 # My Personal Portfolio Website (Virtual CV)
 
-This repository contains the codebase for my personal portfolio website, serving as a virtual CV to showcase my skills, projects, and professional identity.
+This repository contains the codebase for my personal portfolio website, serving as a virtual CV to showcase my skills, projects, certifications, and professional journey as an aspiring IT professional.
 
 ## Table of Contents
 - [About](#about)
@@ -12,7 +12,7 @@ This repository contains the codebase for my personal portfolio website, serving
 - [Contact](#contact)
 
 ## About
-This website is designed to provide a comprehensive overview of my academic background, technical skills, and practical projects. It serves as a central hub for anyone looking to learn more about my capabilities and aspirations as an IT professional.
+This website is designed to provide a comprehensive overview of my academic background, technical skills, projects, and continuous learning journey. It serves as a central hub for recruiters, collaborators, and anyone interested in learning more about my capabilities and aspirations in the field of Information Technology.
 
 ## Features
 - **About Me Section:** A brief introduction to my background and professional goals.
