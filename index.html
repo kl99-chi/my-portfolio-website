@@ -1,468 +1,879 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-padding-top: 160px;">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Keletso Ramothibe | Portfolio</title>
-  <link rel="icon" href="profile.jpg" type="image/jpeg" />
-  <!-- Font Awesome (emojicons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- AOS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keletso Ramothibe — IT Graduate &amp; Software Developer</title>
+<meta name="description" content="Portfolio of Keletso Ramothibe — BSc IT graduate specialising in full-stack development, databases, and networking.">
+<link rel="icon" href="profile.jpg" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <style>
-    :root {
-      --accent: #38bdf8;
-      --card-bg: #0f172a;
-      --page-bg: #1e293b;
-      --muted: #cbd5e1;
-    }
-    body.light-theme .my-work-section {
-      color: #1a1a1a; /* dark text for visibility on light background */
-    }
-    body.dark-theme .my-work-section {
-      color: #f5f5f5; /* light text for dark background */
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: var(--page-bg);
-      color: #f1f5f9;
-      margin: 0;
-      padding: 0;
-      transition: background-color 0.25s, color 0.25s;
-    }
-    header {
-      background-color: #0b1120;
-      padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-    header h1 { margin: 0; font-size: 28px; }
-    header p { margin: 6px 0 0 0; color: #94a3b8; font-size: 14px; }
+<style>
+  :root{
+    --bg:#12161B;
+    --bg-raise:#191F26;
+    --card:#1B222A;
+    --card-border:#2A323C;
+    --ink:#F3F1EC;
+    --ink-soft:#A9B2BC;
+    --ink-faint:#717C87;
+    --brass:#D4A24C;
+    --brass-soft:rgba(212,162,76,0.12);
+    --teal:#5BA89E;
+    --good:#5BA88C;
+    --bad:#C96A5C;
+    --radius:10px;
+  }
+  html[data-theme="light"]{
+    --bg:#F6F3ED;
+    --bg-raise:#FFFFFF;
+    --card:#FFFFFF;
+    --card-border:#E4DDD0;
+    --ink:#1B1A17;
+    --ink-soft:#5B564C;
+    --ink-faint:#8C8678;
+    --brass:#B07F2C;
+    --brass-soft:rgba(176,127,44,0.10);
+    --teal:#357A70;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    transition:background-color .25s ease, color .25s ease;
+  }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .serif{font-family:'Fraunces',serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 24px;}
+  ::selection{background:var(--brass);color:#1A1A1A;}
+  *:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
 
-    .main-nav { margin-top: 12px; }
-    .main-nav ul { list-style: none; padding:0; margin:0; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-    .main-nav a { color: var(--accent); text-decoration:none; font-weight:600; padding:6px 12px; border-radius:6px; }
-    .main-nav a:hover { background:var(--accent); color:#0b1120; }
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:60;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--card-border);
+  }
+  .nav-inner{max-width:1020px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--brass-soft);border:1px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--brass);
+  }
+  .brand-name{font-family:'Fraunces',serif;font-size:16px;font-weight:600;}
+  nav.links{display:flex;align-items:center;gap:22px;font-size:13.5px;}
+  nav.links a{text-decoration:none;color:var(--ink-soft);transition:.15s;}
+  nav.links a:hover{color:var(--brass);}
+  .nav-actions{display:flex;align-items:center;gap:10px;}
+  .icon-btn{
+    width:36px;height:36px;border-radius:50%;border:1px solid var(--card-border);
+    background:var(--card);display:flex;align-items:center;justify-content:center;
+    cursor:pointer;color:var(--ink-soft);font-size:14px;transition:.15s;
+  }
+  .icon-btn:hover{border-color:var(--brass);color:var(--brass);}
+  @media(max-width:760px){ nav.links{display:none;} }
 
-    .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 20px;border-radius:7px;font-size:13.5px;font-weight:600;
+    text-decoration:none;border:1px solid var(--card-border);color:var(--ink);
+    background:transparent;cursor:pointer;transition:.15s;
+  }
+  .btn:hover{border-color:var(--brass);color:var(--brass);}
+  .btn.primary{background:var(--brass);border-color:var(--brass);color:#1A1409;}
+  .btn.primary:hover{background:#C2933F;color:#1A1409;}
+  .btn.full{width:100%;justify-content:center;}
 
-    section {
-      background-color: var(--page-bg);
-      border-radius: 10px;
-      padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
-    }
-    h2 {
-      color: var(--accent);
-      margin: 0 0 18px 0;
-      text-align:center;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 10px;
-    }
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 56px;}
+  .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;}
+  .avatar-wrap{
+    width:240px;height:240px;border-radius:16px;
+    border:2px solid var(--brass);padding:5px;flex-shrink:0;
+    background:var(--card);
+  }
+  .avatar-wrap img{
+    width:100%;height:100%;border-radius:12px;
+    object-fit:cover;object-position:center 18%;
+    display:block;
+  }
+  @media(max-width:640px){
+    .avatar-wrap{width:180px;height:180px;}
+  }
+  .status-line{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:12.5px;color:var(--ink-soft);margin-bottom:14px;
+  }
+  .status-dot{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 0 3px rgba(91,168,140,.18);}
+  h1.hero-name{font-size:clamp(30px,4.6vw,44px);font-weight:600;line-height:1.08;}
+  .hero-role{margin-top:8px;font-size:16px;color:var(--brass);font-weight:500;}
+  .hero-bio{margin-top:14px;font-size:15px;color:var(--ink-soft);max-width:60ch;}
+  .hero-actions{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;}
+  @media(max-width:640px){
+    .hero-grid{grid-template-columns:1fr;text-align:center;}
+    .avatar-wrap{margin:0 auto;}
+    .hero-actions{justify-content:center;}
+    .status-line{justify-content:center;}
+  }
 
-    /* Projects grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 18px;
-    }
-    .project {
-      background-color: var(--card-bg);
-      padding: 18px;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(2,6,23,0.6);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-    .project:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.7); }
-    .project h3 { color: var(--accent); margin:0 0 8px 0; display:flex; gap:10px; align-items:center; font-size:18px; }
-    .project p { color: var(--muted); margin: 6px 0 12px 0; line-height:1.45; }
-    .project a {color: var(--accent); text-decoration: none; font-weight: 600;}
-    .project a:hover {text-decoration: underline;}
-    
-    .btn {
-      display:inline-block;
-      background:#3b82f6;
-      color:white;
-      padding:8px 14px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:600;
-      margin-right:8px;
-    }
-    .btn:hover { background:#2563eb; }
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{padding:54px 0;}
+  section + section{border-top:1px solid var(--card-border);}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--brass);margin-bottom:8px;display:block;
+  }
+  .sec-title{font-family:'Fraunces',serif;font-size:26px;font-weight:600;margin-bottom:30px;}
+  .sec-intro{color:var(--ink-soft);font-size:14.5px;margin-top:-20px;margin-bottom:28px;max-width:64ch;}
 
-    /* Contact block */
-    .contact-info {
-      display:block;
-      background: var(--card-bg);
-      padding:18px;
-      border-radius:10px;
-      text-align:center;
-      color:var(--muted);
-      margin-bottom:12px;
-    }
-    .socials { display:flex; justify-content:center; gap:14px; margin-top:10px; }
-    .socials a { color:var(--accent); font-size:20px; text-decoration:none; }
-    .socials a:hover { color:#60a5fa; }
+  /* ---------- ABOUT ---------- */
+  .about-text{color:var(--ink-soft);font-size:15.5px;max-width:68ch;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+  .pill{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-soft);
+    border:1px solid var(--card-border);border-radius:20px;padding:6px 13px;background:var(--card);
+  }
 
-    /* Form elements */
-    input[type="text"], input[type="email"], textarea {
-      width:100%;
-      padding:10px;
-      border-radius:6px;
-      border:1px solid #334155;
-      background:#0b1220;
-      color:#f1f5f9;
-      box-sizing:border-box;
-      margin-bottom:12px;
-    }
-    textarea { resize:vertical; min-height:110px; }
+  /* ---------- CARDS / PROJECTS ---------- */
+  .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+  .card{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+    padding:22px;transition:.2s ease;
+  }
+  .card:hover{border-color:var(--brass);transform:translateY(-3px);}
+  .card-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .card-icon{
+    width:34px;height:34px;border-radius:8px;background:var(--brass-soft);
+    display:flex;align-items:center;justify-content:center;color:var(--brass);font-size:14px;flex-shrink:0;
+  }
+  .card h3{font-family:'Fraunces',serif;font-size:17px;font-weight:600;}
+  .card p{color:var(--ink-soft);font-size:13.8px;margin-top:4px;}
+  .card .meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-faint);margin-top:10px;}
+  .card .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--teal);background:rgba(91,168,158,.10);border:1px solid rgba(91,168,158,.25);padding:3px 8px;border-radius:5px;}
+  .card .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .card .links a{font-size:12.8px;font-weight:600;color:var(--brass);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+  .card .links a:hover{text-decoration:underline;}
 
-    /* Temperature converter styles inside project */
-    .converter-container { margin-top:8px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.04); }
+  /* converter widget */
+  .card.wide{grid-column:1 / -1;}
+  .conv-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+  .conv-row input, .conv-row select{
+    background:var(--bg-raise);border:1px solid var(--card-border);color:var(--ink);
+    border-radius:6px;padding:9px 10px;font-size:13px;font-family:'Inter',sans-serif;
+  }
+  .conv-row input{flex:1;min-width:100px;}
+  .conv-row select{min-width:120px;}
+  .conv-arrow{align-self:center;color:var(--ink-faint);}
+  #conversion-result{
+    margin-top:12px;min-height:20px;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--brass);
+  }
+  .cat-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .cat-tab{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.03em;
+    border:1px solid var(--card-border);background:var(--bg-raise);color:var(--ink-soft);
+    padding:7px 13px;border-radius:20px;cursor:pointer;transition:.15s;
+  }
+  .cat-tab:hover{border-color:var(--brass);color:var(--brass);}
+  .cat-tab.active{background:var(--brass);border-color:var(--brass);color:#1A1409;}
+  .conv-note{margin-top:10px;font-size:11.5px;color:var(--ink-faint);}
 
-    /* Light mode */
-    .light-mode { background:#f1f5f9 !important; color:#0b1120 !important; }
-    .light-mode header { background:#ffffff !important; color:#0b1120 !important; }
-    .light-mode .project { background: #ffffff !important; color:#0b1120 !important; border:1px solid #e6eefc; }
-    .light-mode input, .light-mode textarea { background:#ffffff; color:#0b1120; border:1px solid #cbd5e1; }
+  /* code explainer */
+  .explainer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px;}
+  @media(max-width:760px){.explainer-grid{grid-template-columns:1fr;}}
+  #code-input{
+    width:100%;min-height:200px;background:var(--bg-raise);border:1px solid var(--card-border);
+    color:var(--ink);border-radius:7px;padding:13px;font-family:'JetBrains Mono',monospace;
+    font-size:12.8px;resize:vertical;line-height:1.55;
+  }
+  #code-input:focus{border-color:var(--brass);}
+  .explain-output{
+    background:var(--bg-raise);border:1px solid var(--card-border);border-radius:7px;
+    padding:16px;min-height:200px;font-size:13.5px;color:var(--ink-soft);
+  }
+  .explain-output .lang-badge{
+    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:var(--brass);background:var(--brass-soft);border:1px solid var(--brass);
+    border-radius:5px;padding:3px 9px;margin-bottom:10px;
+  }
+  .explain-output ul{margin:8px 0 0 0;padding-left:18px;}
+  .explain-output li{margin-bottom:6px;}
+  .explain-output .placeholder{color:var(--ink-faint);}
 
-    footer { text-align:center; color:#9aa8bd; padding:18px 0; margin-top:10px; }
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--card-border);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;}
+  .skill-cell{background:var(--card);padding:20px;}
+  .skill-cell .cat{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+  .skill-cell .cat i{color:var(--brass);font-size:13px;width:16px;}
+  .skill-cell .cat span{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);}
+  .skill-cell .items{font-size:14px;color:var(--ink);}
 
-    /* Responsive minor tweaks */
-    @media (max-width:420px) {
-      header h1 { font-size:20px; }
-      .main-nav a { font-size:13px; }
-    }
-  </style>
+  /* ---------- CERTS / LEARNING ---------- */
+  .cert-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 20px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:1px;}
+  .cert-left{display:flex;align-items:center;gap:14px;}
+  .cert-icon{width:38px;height:38px;border-radius:8px;background:var(--brass-soft);color:var(--brass);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+  .cert-name{font-weight:600;font-size:14.5px;}
+  .cert-issuer{font-size:12.5px;color:var(--ink-soft);}
+  .cert-date{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-faint);}
+
+  .learning-grid{display:flex;flex-wrap:wrap;gap:10px;}
+  .learning-pill{
+    display:flex;align-items:center;gap:8px;
+    border:1px solid var(--card-border);background:var(--card);border-radius:20px;
+    padding:8px 14px 8px 10px;font-size:13px;
+  }
+  .learning-pill .lp-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);}
+  .learning-pill.active .lp-dot{background:var(--brass);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,162,76,.4);}70%{box-shadow:0 0 0 6px rgba(212,162,76,0);}100%{box-shadow:0 0 0 0 rgba(212,162,76,0);}}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:24px;}
+  .contact-direct{display:flex;flex-direction:column;gap:14px;margin-bottom:22px;}
+  .contact-direct a{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:14.5px;color:var(--ink);}
+  .contact-direct i{width:32px;height:32px;border-radius:8px;background:var(--brass-soft);color:var(--brass);display:flex;align-items:center;justify-content:center;font-size:13px;}
+  .socials{display:flex;gap:10px;margin-top:6px;}
+  .socials a{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--card-border);
+    display:flex;align-items:center;justify-content:center;color:var(--ink-soft);text-decoration:none;transition:.15s;
+  }
+  .socials a:hover{border-color:var(--brass);color:var(--brass);}
+
+  form label{font-size:12.5px;color:var(--ink-soft);display:block;margin-bottom:6px;font-family:'JetBrains Mono',monospace;}
+  form .field{margin-bottom:16px;}
+  form input, form textarea{
+    width:100%;background:var(--bg-raise);border:1px solid var(--card-border);color:var(--ink);
+    border-radius:7px;padding:11px 13px;font-size:14px;font-family:'Inter',sans-serif;
+  }
+  form input:focus, form textarea:focus{border-color:var(--brass);}
+  form textarea{resize:vertical;min-height:110px;}
+  #form-message{margin-top:14px;padding:11px 14px;border-radius:7px;font-size:13.5px;display:none;}
+  #form-message.ok{background:rgba(91,168,140,.12);color:var(--good);display:block;}
+  #form-message.err{background:rgba(201,106,92,.12);color:var(--bad);display:block;}
+
+  footer{padding:34px 0 50px;text-align:center;}
+  footer p{font-size:12.5px;color:var(--ink-faint);font-family:'JetBrains Mono',monospace;}
+  footer .resume-line{margin-bottom:16px;}
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Keletso Ramothibe</h1>
-  <p>BSc IT Graduate | Software Developer | Cloud & AI Enthusiast | Problem Solver</p>
-
-  <nav class="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">My Work</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#certifications">Certifications & Online Courses</a></li>
-      <li><a href="#learning">Learning</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#resume">Resume</a></li>
-    </ul>
-  </nav>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">KR</span>
+      <span class="brand-name">Keletso Ramothibe</span>
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn" href="KELETSO_Resume.pdf" download style="padding:9px 16px;">
+        <i class="fa-solid fa-file-arrow-down"></i>&nbsp;Resume
+      </a>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle light and dark theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </div>
 </header>
 
-<div class="container">
+<div id="top"></div>
 
-  <section class="my-work-section text-gray-900 dark:text-gray-100" id="about" data-aos="fade-right">
-    <h2><i class="fa-solid fa-briefcase"></i>&nbsp;About me</h2>
-    <div style="text-align:center;">
-      <img src="profile.jpg" alt="Profile Photo" width="160" style="border-radius:50%; border:4px solid var(--accent);" onerror="this.onerror=null;this.src='https://placehold.co/300x300/667eea/ffffff?text=Profile';">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="avatar-wrap">
+      <img src="profile.jpg" alt="Photo of Keletso Ramothibe" onerror="this.onerror=null;this.src='https://placehold.co/300x300/1B222A/D4A24C?text=KR';">
     </div>
-    <p style="text-align:center; margin-top:14px; color:var(--muted);">
-      I am an entry-level IT professional with completed academic training in Information Technology. I have a solid understanding of
-      <strong>programming principles, networking fundamentals, and technical troubleshooting</strong>. I am dependable, quick to learn, and motivated to contribute to efficient IT operations while developing my professional skills.
-    </p>
-  </section>
+    <div>
+      <div class="status-line"><span class="status-dot"></span>Open to junior IT &amp; developer roles</div>
+      <h1 class="hero-name serif">Keletso Ramothibe</h1>
+      <p class="hero-role">BSc IT Graduate · Software Developer · Networking</p>
+      <p class="hero-bio">I build across full-stack development, SQL databases, and network infrastructure. Hands-on experience came from a C# desktop system built solo and a Firebase web app shipped with a team in 36 hours at a campus hackathon. I learn fast, I'm dependable under deadline pressure, and I care about shipping things that actually work.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="mailto:keletsoramothibe99@gmail.com"><i class="fa-solid fa-paper-plane"></i>&nbsp;Get in touch</a>
+        <a class="btn" href="#work"><i class="fa-solid fa-folder-open"></i>&nbsp;See my work</a>
+        <a class="btn" href="https://github.com/kl99-chi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>&nbsp;GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section id="work" data-aos="fade-up">
-    <h2><i class="fa-solid fa-briefcase"></i>&nbsp;My Work</h2>
+<section id="about">
+  <div class="wrap">
+    <span class="eyebrow">About</span>
+    <h2 class="sec-title serif">A quick introduction</h2>
+    <p class="about-text">I'm an entry-level IT professional with completed academic training in Information Technology from North-West University. I have a solid grounding in programming principles, networking fundamentals, and technical troubleshooting — and I'm motivated to contribute to efficient IT operations while continuing to build out my skill set on the job.</p>
+    <div class="pill-row">
+      <span class="pill">SESOTHO (HOME LANGUAGE)</span>
+      <span class="pill">ENGLISH</span>
+      <span class="pill">ISIZULU</span>
+      <span class="pill">SETSWANA</span>
+      <span class="pill">SEPEDI</span>
+    </div>
+  </div>
+</section>
 
-    <div class="projects-grid">
-      <!-- AAC -->
-      <article class="project" aria-labelledby="aac-title">
-        <h3 id="aac-title">
-          <i class="fa-solid fa-person-running"></i> 
-          Awesome Athletics Club (AAC) System
-        </h3>
-        <p>
-          A full-stack project for managing members, generating reports, 
-          registering products, and printing data. Includes login/logout, 
-          input validation, sorting, and filters.
-        </p>
-        <p>
-          <strong>Technologies:</strong> C#, Windows Forms, SQL, .NET
-        </p>
-        <p>
-          <strong>GitHub:</strong>
-          <a href="https://github.com/kl99-chi/awesome-athletics-club-system" target="_blank" rel="noopener">
-            View Repository
-          </a>
-        </p>
-      </article>
+<section id="work">
+  <div class="wrap">
+    <span class="eyebrow">Work</span>
+    <h2 class="sec-title serif">Selected projects</h2>
 
-      <!-- NWU Exchange App -->
-      <article class="project" aria-labelledby="nwu-title">
-        <h3 id="nwu-title"><i class="fa-solid fa-arrows-rotate"></i> NWU Exchange App</h3>
-        <p>A convenient platform for buying, selling, and trading items between NWU students. Frontend-only web app built during the NWU Internal Hackathon using Firebase Studio and deployed on Vercel.</p>
-        <a class="btn" href="https://nwu-exchange-app.vercel.app/" target="_blank" rel="noopener" style="background-color:#28a745; color:white; border:none;"><i class="fa-solid fa-link"></i>&nbsp;Visit App</a>
-        <a class="btn" href="K_RAMOTHIBE_CERTIFICATE.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-certificate"></i>&nbsp;View Hackathon Certificate</a>
-      </article>
-    
-      <!-- Temperature Converter -->
-      <article class="project" aria-labelledby="temp-title">
-        <h3 id="temp-title"><i class="fa-solid fa-temperature-high"></i> Temperature Converter</h3>
-        <p>Convert between Celsius, Fahrenheit, and Kelvin — demonstrates DOM handling and simple conversion logic.</p>
-
-        <div class="converter-container">
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <input id="temp-input" type="number" placeholder="Temperature" style="flex:1; min-width:120px;">
-            <select id="from-unit" style="min-width:140px;">
-              <option value="celsius">Celsius (°C)</option>
-              <option value="fahrenheit">Fahrenheit (°F)</option>
-              <option value="kelvin">Kelvin (K)</option>
-            </select>
-            <span style="align-self:center;">→</span>
-            <select id="to-unit" style="min-width:140px;">
-              <option value="fahrenheit">Fahrenheit (°F)</option>
-              <option value="celsius">Celsius (°C)</option>
-              <option value="kelvin">Kelvin (K)</option>
-            </select>
-          </div>
-          <div style="margin-top:10px;">
-            <button id="convert-btn" class="btn">Convert</button>
-          </div>
-          <div id="conversion-result" style="margin-top:10px; padding:10px; border-radius:8px; min-height:44px; color:var(--muted); border:1px solid rgba(255,255,255,0.03);"></div>
+    <div class="grid-2">
+      <article class="card">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-person-running"></i></div>
+          <h3>Awesome Athletics Club (AAC) System</h3>
+        </div>
+        <p>A full-stack desktop system for managing members, registering products, generating reports, and printing data. Built with a layered architecture, login/logout flow, input validation, sorting and filtering.</p>
+        <div class="meta">ROLE: GROUP LEADER · 2025</div>
+        <div class="tag-row">
+          <span class="tag">C#</span><span class="tag">Windows Forms</span><span class="tag">SQL Server</span><span class="tag">.NET</span>
+        </div>
+        <div class="links">
+          <a href="https://github.com/kl99-chi/awesome-athletics-club-system" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>Repository</a>
         </div>
       </article>
 
-      <!-- Other Projects -->
-      <article class="project" aria-labelledby="other-title">
-        <h3 id="other-title"><i class="fa-solid fa-folder-open"></i> Other Projects</h3>
-        <p>Explore more of my projects and assignments on my GitHub profile.</p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/kl99-chi" target="_blank" rel="noopener">github.com/kl99-chi</a></p>
+      <article class="card">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <h3>NWU Exchange App</h3>
+        </div>
+        <p>A platform for NWU students to buy, sell, and trade items with each other. Frontend-only web app, scoped and shipped during the NWU Internal Hackathon.</p>
+        <div class="meta">ROLE: GROUP MEMBER · 2025</div>
+        <div class="tag-row">
+          <span class="tag">Firebase Studio</span><span class="tag">Vercel</span><span class="tag">Responsive UI</span>
+        </div>
+        <div class="links">
+          <a href="https://nwu-exchange-app.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i>Visit app</a>
+          <a href="K_RAMOTHIBE_CERTIFICATE.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-certificate"></i>Hackathon certificate</a>
+        </div>
       </article>
 
-    </div>
-  </section>
-
-  <section id="skills" data-aos="fade-up">
-    <h2><i class="fa-solid fa-lightbulb"></i>&nbsp;Skills</h2>
-    <ul style="color:var(--muted); list-style:none; padding:0; display:grid; gap:8px; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));">
-      <li><i class="fa-solid fa-code"></i>&nbsp;Programming: Python, C#, Java, C++</li>
-      <li><i class="fa-solid fa-globe"></i>&nbsp;Web: HTML, CSS</li>
-      <li><i class="fa-solid fa-database"></i>&nbsp;Database: SQL</li>
-      <li><i class="fa-solid fa-network-wired"></i>&nbsp;Networking: Cisco Packet Tracer</li>
-      <li><i class="fa-solid fa-file-word"></i>&nbsp;Microsoft Office Suite</li>
-      <li><i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Hardware & Network Troubleshooting</li>
-    </ul>
-  </section>
-
-  <section id="certifications" data-aos="fade-up">
-    <h2><i class="fa-solid fa-certificate"></i>&nbsp;Certifications & Online Courses</h2>
-  
-    <div class="projects-grid">
-  
-      <article class="project">
-        <h3><i class="fa-solid fa-chart-line"></i> Machine Learning Onramp</h3>
-        <p>Completed a self-paced course introducing machine learning concepts including classification, model evaluation, and data analysis.</p>
-        <p><strong>Issued by:</strong> MathWorks | <strong>Date:</strong> 23 January 2026</p>
-        <a class="btn" href="Machine_Learning_certificate.pdf" target="_blank">
-          <i class="fa-solid fa-file"></i>&nbsp;View Certificate
-        </a>
+      <article class="card wide">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+          <h3>Universal Converter</h3>
+        </div>
+        <p>An all-purpose unit converter — temperature, length, weight, digital storage, and live currency rates, all in the browser.</p>
+        <div class="cat-tabs" id="conv-tabs">
+          <button class="cat-tab active" data-cat="temperature" type="button">Temperature</button>
+          <button class="cat-tab" data-cat="length" type="button">Distance</button>
+          <button class="cat-tab" data-cat="weight" type="button">Weight</button>
+          <button class="cat-tab" data-cat="storage" type="button">Size</button>
+          <button class="cat-tab" data-cat="currency" type="button">Currency</button>
+        </div>
+        <div class="conv-row">
+          <input id="conv-input" type="number" placeholder="Enter a value" aria-label="Value to convert">
+          <select id="conv-from" aria-label="Convert from"></select>
+          <span class="conv-arrow">→</span>
+          <select id="conv-to" aria-label="Convert to"></select>
+        </div>
+        <button id="convert-btn" class="btn" style="margin-top:12px;">Convert</button>
+        <div id="conversion-result"></div>
+        <div class="conv-note" id="conv-note"></div>
       </article>
-  
-      <article class="project">
-        <h3><i class="fa-solid fa-code"></i> MATLAB Onramp</h3>
-        <p>Learned MATLAB fundamentals including programming basics, data visualization, and working with matrices.</p>
-        <p><strong>Issued by:</strong> MathWorks | <strong>Date:</strong> 5 March 2026</p>
-        <a class="btn" href="MATLAB_certificate.pdf" target="_blank">
-          <i class="fa-solid fa-file"></i>&nbsp;View Certificate
-        </a>
+
+      <article class="card wide">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Code Explainer</h3>
+        </div>
+        <p>Paste a block of code and get a plain-English breakdown of its structure. Strongest on Python, SQL, HTML, and Java — including Java's object-oriented principles (encapsulation, inheritance, polymorphism, abstraction) and common data structures &amp; algorithms. Runs entirely in your browser, no code leaves the page.</p>
+        <div class="explainer-grid">
+          <div>
+            <label for="code-input" class="mono" style="font-size:11.5px;color:var(--ink-soft);display:block;margin-bottom:6px;">PASTE CODE</label>
+            <textarea id="code-input" placeholder="Paste a function, class, or script here…" spellcheck="false"></textarea>
+            <button id="explain-btn" class="btn primary" style="margin-top:12px;">Explain code</button>
+          </div>
+          <div>
+            <label class="mono" style="font-size:11.5px;color:var(--ink-soft);display:block;margin-bottom:6px;">EXPLANATION</label>
+            <div class="explain-output" id="code-explanation">
+              <span class="placeholder">Paste code on the left and click "Explain code" to see a breakdown here.</span>
+            </div>
+          </div>
+        </div>
       </article>
-  
+
+      <article class="card">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-folder-open"></i></div>
+          <h3>More on GitHub</h3>
+        </div>
+        <p>Additional projects, coursework, and experiments live on my GitHub profile — always adding to it.</p>
+        <div class="links">
+          <a href="https://github.com/kl99-chi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>github.com/kl99-chi</a>
+        </div>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="learning" data-aos="fade-up">
-    <h2><i class="fa-solid fa-brain"></i>&nbsp;Currently Learning</h2>
-    <ul style="color:var(--muted); list-style:none; padding:0;">
-      <li>• Microsoft Applied Skills: Configure and Migrate to Azure Database for PostgreSQL (In Progress)</li>
-      <li>• Cloud Computing Fundamentals</li>
-      <li>• Oracle Cloud Infrastructure Concepts</li>
-      <li>• Machine Learning Applications</li>
-      <li>• Advanced Python Development</li>
-    </ul>
-  </section>
+<section id="skills">
+  <div class="wrap">
+    <span class="eyebrow">Skills</span>
+    <h2 class="sec-title serif">What I work with</h2>
+    <div class="skills-grid">
+      <div class="skill-cell">
+        <div class="cat"><i class="fa-solid fa-code"></i><span>Programming</span></div>
+        <div class="items">Python, C#, Java, C++</div>
+      </div>
+      <div class="skill-cell">
+        <div class="cat"><i class="fa-solid fa-globe"></i><span>Web</span></div>
+        <div class="items">HTML, CSS</div>
+      </div>
+      <div class="skill-cell">
+        <div class="cat"><i class="fa-solid fa-database"></i><span>Database</span></div>
+        <div class="items">SQL</div>
+      </div>
+      <div class="skill-cell">
+        <div class="cat"><i class="fa-solid fa-network-wired"></i><span>Networking</span></div>
+        <div class="items">Cisco Packet Tracer</div>
+      </div>
+      <div class="skill-cell">
+        <div class="cat"><i class="fa-solid fa-file-word"></i><span>Productivity</span></div>
+        <div class="items">Microsoft Office Suite</div>
+      </div>
+      <div class="skill-cell">
+        <div class="cat"><i class="fa-solid fa-screwdriver-wrench"></i><span>Support</span></div>
+        <div class="items">Hardware &amp; network troubleshooting</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="my-work-section text-gray-900 dark:text-gray-100" id="contact" data-aos="fade-left">
-    <h2><i class="fa-solid fa-envelope"></i>&nbsp;Contact Me</h2>
+<section id="certifications">
+  <div class="wrap">
+    <span class="eyebrow">Certifications</span>
+    <h2 class="sec-title serif">Certifications &amp; online courses</h2>
 
-    <div class="contact-info" aria-hidden="false">
-      <p style="margin:0;"><strong>Email:</strong> <a href="mailto:keletsoramothibe99@gmail.com">keletsoramothibe99@gmail.com</a></p>
-      <p style="margin:6px 0 0 0;"><strong>Phone:</strong> 063 464 8207</p>
+    <div class="cert-row">
+      <div class="cert-left">
+        <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div>
+          <div class="cert-name">Machine Learning Onramp</div>
+          <div class="cert-issuer">MathWorks</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span class="cert-date">23 JAN 2026</span>
+        <a class="btn" href="Machine_Learning_certificate.pdf" target="_blank" style="padding:7px 14px;font-size:12.5px;">View</a>
+      </div>
     </div>
 
-    <!-- Contact form (your provided markup) -->
-    <form id="contact-form" action="https://formspree.io/f/xyzpwwok" method="POST" style="margin-top: 18px;">
-      <label>Name</label><br>
-      <input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
-      <label>Email</label><br>
-      <input type="email" name="email" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
-      <label>Message</label><br>
-      <textarea name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea><br>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-
-    <div id="form-message" role="status" style="margin-top:12px; display:none; padding:10px; border-radius:8px; color:white;"></div>
-
-    <div class="socials" aria-label="Social links" style="margin-top:14px;">
-      <a href="https://www.linkedin.com/in/keletso-ramothibe-292254365" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-      <a href="https://github.com/kl99-chi" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+    <div class="cert-row">
+      <div class="cert-left">
+        <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
+        <div>
+          <div class="cert-name">MATLAB Onramp</div>
+          <div class="cert-issuer">MathWorks</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span class="cert-date">05 MAR 2026</span>
+        <a class="btn" href="MATLAB_certificate.pdf" target="_blank" style="padding:7px 14px;font-size:12.5px;">View</a>
+      </div>
     </div>
-  </section>
 
-  <section id="resume" style="text-align:center;">
-    <a href="KELETSO_Resume.pdf" class="btn" download><i class="fa-solid fa-file-pdf"></i>&nbsp;Download Resume</a>
-  </section>
+    <div class="cert-row" style="margin-bottom:0;">
+      <div class="cert-left">
+        <div class="cert-icon"><i class="fa-brands fa-java"></i></div>
+        <div>
+          <div class="cert-name">Java (Basic)</div>
+          <div class="cert-issuer">HackerRank</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span class="cert-date">20 JUN 2026</span>
+        <a class="btn" href="Java_certificate.pdf" target="_blank" style="padding:7px 14px;font-size:12.5px;">View</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Keletso Ramothibe. All rights reserved.
-  </footer>
-</div>
+<section id="learning">
+  <div class="wrap">
+    <span class="eyebrow">Currently learning</span>
+    <h2 class="sec-title serif">Still building</h2>
+    <div class="learning-grid">
+      <span class="learning-pill active"><span class="lp-dot"></span>Microsoft Applied Skills: Configure &amp; Migrate to Azure Database for PostgreSQL — in progress</span>
+      <span class="learning-pill"><span class="lp-dot"></span>Cloud Computing Fundamentals</span>
+      <span class="learning-pill"><span class="lp-dot"></span>Oracle Cloud Infrastructure Concepts</span>
+      <span class="learning-pill"><span class="lp-dot"></span>Machine Learning Applications</span>
+      <span class="learning-pill"><span class="lp-dot"></span>Advanced Python Development</span>
+    </div>
+  </div>
+</section>
 
-<!-- Theme Toggle (emojicon via Font Awesome) -->
-<button id="theme-toggle" class="btn" aria-label="Toggle theme" style="position:fixed;bottom:18px;right:18px;z-index:2000;">
-  <i class="fa-solid fa-moon"></i>
-</button>
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2 class="sec-title serif">Let's talk</h2>
+    <p class="sec-intro">Open to junior IT and developer roles. The fastest way to reach me is email — I usually reply within a day.</p>
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-direct">
+          <a href="mailto:keletsoramothibe99@gmail.com"><i class="fa-solid fa-envelope"></i>keletsoramothibe99@gmail.com</a>
+          <a href="tel:0634648207"><i class="fa-solid fa-phone"></i>063 464 8207</a>
+          <a href="#" onclick="return false;"><i class="fa-solid fa-location-dot"></i>Germiston, South Africa</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/keletso-ramothibe-292254365" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/kl99-chi" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <form id="contact-form" action="https://formspree.io/f/xyzpwwok" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn primary full">Send message</button>
+        </form>
+        <div id="form-message" role="status"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="resume-line">
+      <a class="btn primary" href="KELETSO_Resume.pdf" download><i class="fa-solid fa-file-pdf"></i>&nbsp;Download full résumé (PDF)</a>
+    </div>
+    <p>© 2026 Keletso Ramothibe. Built and maintained by hand.</p>
+  </div>
+</footer>
+
 <script>
-  AOS.init({ duration: 900, once: true });
-
-  // Smooth-scrolling for internal links
+  // smooth-scroll for in-page links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function (e) {
-      e.preventDefault();
-      const dest = document.querySelector(this.getAttribute('href'));
-      if (dest) dest.scrollIntoView({ behavior: 'smooth' });
+      const id = this.getAttribute('href');
+      if (id.length < 2) return;
+      const dest = document.querySelector(id);
+      if (dest) { e.preventDefault(); dest.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
 
-  // Theme toggle (uses Font Awesome icons as emojicons)
+  // theme toggle, persists for the session
+  const root = document.documentElement;
   const toggleBtn = document.getElementById('theme-toggle');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    document.documentElement.classList.toggle('light-mode');
+  function applyTheme(theme){
+    root.setAttribute('data-theme', theme);
     const icon = toggleBtn.querySelector('i');
-    if (document.body.classList.contains('light-mode')) {
-      icon.classList.remove('fa-moon'); icon.classList.add('fa-sun');
-    } else {
-      icon.classList.remove('fa-sun'); icon.classList.add('fa-moon');
-    }
+    icon.className = theme === 'light' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+  }
+  applyTheme('dark');
+  toggleBtn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    applyTheme(next);
   });
 
-  // Contact form submission to Formspree
+  // contact form -> Formspree
   (function () {
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
-
     contactForm.addEventListener('submit', async function (event) {
       event.preventDefault();
+      formMessage.className = '';
       formMessage.style.display = 'block';
-      formMessage.style.backgroundColor = '#28a745';
-      formMessage.style.color = '#fff';
-      formMessage.textContent = 'Sending message...';
-
+      formMessage.textContent = 'Sending message…';
       try {
         const res = await fetch(contactForm.action, {
           method: contactForm.method,
           body: new FormData(contactForm),
           headers: { 'Accept': 'application/json' }
         });
-
         if (res.ok) {
-          formMessage.textContent = 'Thank you for your message! I will respond shortly.';
+          formMessage.className = 'ok';
+          formMessage.textContent = 'Thanks — your message is sent. I\'ll get back to you shortly.';
           contactForm.reset();
-          setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
         } else {
-          const data = await res.json();
-          formMessage.style.backgroundColor = '#dc3545';
-          formMessage.textContent = data?.error || 'Oops! Something went wrong. Please try again.';
-          setTimeout(() => { formMessage.style.display = 'none'; formMessage.style.backgroundColor = '#28a745'; }, 5000);
+          const data = await res.json().catch(() => ({}));
+          formMessage.className = 'err';
+          formMessage.textContent = data?.error || 'Something went wrong. Please try again or email me directly.';
         }
       } catch (err) {
-        console.error(err);
-        formMessage.style.backgroundColor = '#dc3545';
-        formMessage.textContent = 'Error: Unable to send message at the moment.';
-        setTimeout(() => { formMessage.style.display = 'none'; formMessage.style.backgroundColor = '#28a745'; }, 5000);
+        formMessage.className = 'err';
+        formMessage.textContent = 'Unable to send right now. Please email me directly.';
       }
     });
   })();
 
-  // Temperature converter logic
+  // ---------- Universal Converter ----------
   (function () {
-    const tempInput = document.getElementById('temp-input');
-    const fromUnit = document.getElementById('from-unit');
-    const toUnit = document.getElementById('to-unit');
+    const UNITS = {
+      temperature: {
+        label: 'Temperature',
+        units: { celsius: 'Celsius (°C)', fahrenheit: 'Fahrenheit (°F)', kelvin: 'Kelvin (K)' },
+        convert(value, from, to) {
+          let c = from === 'celsius' ? value : from === 'fahrenheit' ? (value - 32) * 5/9 : value - 273.15;
+          return to === 'celsius' ? c : to === 'fahrenheit' ? (c * 9/5) + 32 : c + 273.15;
+        }
+      },
+      length: {
+        label: 'Distance',
+        units: { m: 'Metres (m)', km: 'Kilometres (km)', cm: 'Centimetres (cm)', mile: 'Miles (mi)', yard: 'Yards (yd)', foot: 'Feet (ft)', inch: 'Inches (in)' },
+        toBase: { m: 1, km: 1000, cm: 0.01, mile: 1609.344, yard: 0.9144, foot: 0.3048, inch: 0.0254 },
+        convert(value, from, to) { return value * this.toBase[from] / this.toBase[to]; }
+      },
+      weight: {
+        label: 'Weight',
+        units: { g: 'Grams (g)', kg: 'Kilograms (kg)', lb: 'Pounds (lb)', oz: 'Ounces (oz)' },
+        toBase: { g: 1, kg: 1000, lb: 453.592, oz: 28.3495 },
+        convert(value, from, to) { return value * this.toBase[from] / this.toBase[to]; }
+      },
+      storage: {
+        label: 'Size',
+        units: { B: 'Bytes (B)', KB: 'Kilobytes (KB)', MB: 'Megabytes (MB)', GB: 'Gigabytes (GB)', TB: 'Terabytes (TB)' },
+        toBase: { B: 1, KB: 1024, MB: 1024**2, GB: 1024**3, TB: 1024**4 },
+        convert(value, from, to) { return value * this.toBase[from] / this.toBase[to]; }
+      },
+      currency: {
+        label: 'Currency',
+        units: { USD: 'US Dollar', EUR: 'Euro', GBP: 'British Pound', ZAR: 'South African Rand', JPY: 'Japanese Yen', AUD: 'Australian Dollar', CAD: 'Canadian Dollar', CNY: 'Chinese Yuan', INR: 'Indian Rupee' },
+        async convert(value, from, to) {
+          const res = await fetch(`https://open.er-api.com/v6/latest/${from}`);
+          if (!res.ok) throw new Error('rate lookup failed');
+          const data = await res.json();
+          const rate = data.rates?.[to];
+          if (!rate) throw new Error('unsupported currency pair');
+          return value * rate;
+        }
+      }
+    };
+
+    const tabsEl = document.getElementById('conv-tabs');
+    const fromEl = document.getElementById('conv-from');
+    const toEl = document.getElementById('conv-to');
+    const inputEl = document.getElementById('conv-input');
+    const resultEl = document.getElementById('conversion-result');
+    const noteEl = document.getElementById('conv-note');
     const convertBtn = document.getElementById('convert-btn');
-    const conversionResult = document.getElementById('conversion-result');
+    let activeCat = 'temperature';
 
-    convertBtn?.addEventListener('click', () => {
-      const temperature = parseFloat(tempInput.value);
-      const from = fromUnit.value;
-      const to = toUnit.value;
-      let result;
-      if (isNaN(temperature)) {
-        conversionResult.textContent = 'Please enter a valid number.';
-        return;
-      }
-      let tempInCelsius;
-      if (from === 'celsius') tempInCelsius = temperature;
-      else if (from === 'fahrenheit') tempInCelsius = (temperature - 32) * 5 / 9;
-      else tempInCelsius = temperature - 273.15;
+    function populateUnits(cat) {
+      const def = UNITS[cat];
+      const keys = Object.keys(def.units);
+      fromEl.innerHTML = keys.map(k => `<option value="${k}">${def.units[k]}</option>`).join('');
+      toEl.innerHTML = keys.map(k => `<option value="${k}">${def.units[k]}</option>`).join('');
+      if (keys.length > 1) toEl.selectedIndex = 1;
+      resultEl.textContent = '';
+      noteEl.textContent = cat === 'currency' ? 'Live rates fetched from open.er-api.com — falls back to an error message if offline.' : '';
+    }
 
-      if (to === 'celsius') result = tempInCelsius;
-      else if (to === 'fahrenheit') result = (tempInCelsius * 9 / 5) + 32;
-      else result = tempInCelsius + 273.15;
-
-      function getUnitSymbol(u) {
-        if (u === 'celsius') return '°C';
-        if (u === 'fahrenheit') return '°F';
-        return 'K';
-      }
-      conversionResult.textContent = `${result.toFixed(2)} ${getUnitSymbol(to)}`;
+    tabsEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('.cat-tab');
+      if (!btn) return;
+      tabsEl.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.dataset.cat;
+      populateUnits(activeCat);
     });
+
+    convertBtn.addEventListener('click', async () => {
+      const value = parseFloat(inputEl.value);
+      if (isNaN(value)) { resultEl.textContent = 'Enter a number to convert.'; return; }
+      const def = UNITS[activeCat];
+      const from = fromEl.value, to = toEl.value;
+      resultEl.textContent = activeCat === 'currency' ? 'Looking up live rate…' : '';
+      try {
+        const result = await def.convert(value, from, to);
+        const unitLabel = activeCat === 'currency' ? to : (def.units[to].match(/\(([^)]+)\)/)?.[1] || to);
+        resultEl.textContent = `${result.toFixed(2)} ${unitLabel}`;
+      } catch (err) {
+        resultEl.textContent = 'Could not fetch a live rate right now — try again in a moment.';
+      }
+    });
+
+    populateUnits(activeCat);
   })();
 
-  // Code Explainer: sends code to your backend which calls OpenAI
+  // ---------- Code Explainer (static analysis, runs fully client-side) ----------
   (function () {
-    const explainBtn = document.getElementById('explain-btn');
     const codeInput = document.getElementById('code-input');
-    const codeExplanation = document.getElementById('code-explanation');
+    const explainBtn = document.getElementById('explain-btn');
+    const out = document.getElementById('code-explanation');
 
-    explainBtn?.addEventListener('click', async () => {
-      const userCode = codeInput.value.trim();
-      if (!userCode) {
-        codeExplanation.textContent = "Please paste your code first!";
+    function detectLanguage(code) {
+      const tests = [
+        { lang: 'SQL', re: /\b(SELECT|INSERT INTO|UPDATE|DELETE FROM|CREATE TABLE)\b/i },
+        { lang: 'HTML', re: /<\/?[a-z][\s\S]*>/i },
+        { lang: 'Java', re: /\bSystem\.out\.println|public\s+(static\s+)?(class|void|int|String)\b|import\s+java\./ },
+        { lang: 'Python', re: /^\s*(def |import |from \S+ import|print\()/m },
+        { lang: 'C#', re: /\busing System|Console\.WriteLine/ },
+        { lang: 'C / C++', re: /#include\s*<|int main\s*\(/ },
+        { lang: 'JavaScript', re: /\b(function|const |let |=>|console\.log)\b/ },
+      ];
+      for (const t of tests) if (t.re.test(code)) return t.lang;
+      return 'Unrecognised / generic';
+    }
+
+    function analyseJavaOOP(code) {
+      const points = [];
+      const classMatches = [...code.matchAll(/\bclass\s+(\w+)(?:\s+extends\s+(\w+))?(?:\s+implements\s+([\w,\s]+))?/g)];
+      const interfaceMatches = [...code.matchAll(/\binterface\s+(\w+)/g)];
+      const abstractMatches = code.match(/\babstract\s+(class|void|int|String)\b/g) || [];
+      const privateFields = code.match(/\bprivate\s+\w+\s+\w+/g) || [];
+      const publicMethods = code.match(/\bpublic\s+\w+(?:<[^>]+>)?\s+\w+\s*\(/g) || [];
+      const getters = code.match(/\bpublic\s+\w+\s+get\w+\s*\(/g) || [];
+      const setters = code.match(/\bpublic\s+void\s+set\w+\s*\(/g) || [];
+      const overrides = code.match(/@Override/g) || [];
+      const constructors = classMatches.length ? classMatches.filter(m => new RegExp(`\\b${m[1]}\\s*\\([^)]*\\)\\s*\\{`).test(code)).length : 0;
+
+      classMatches.forEach(m => {
+        const [, name, parent, impl] = m;
+        if (parent) points.push(`Class <strong>${name}</strong> extends <strong>${parent}</strong> — this is <strong>inheritance</strong>, reusing and specialising behaviour from a parent class.`);
+        if (impl) points.push(`Class <strong>${name}</strong> implements <strong>${impl.trim()}</strong> — an example of <strong>abstraction</strong> through an interface contract.`);
+      });
+      if (interfaceMatches.length) points.push(`Defines ${interfaceMatches.length} interface${interfaceMatches.length > 1 ? 's' : ''} — a blueprint of methods without implementation, used for abstraction.`);
+      if (abstractMatches.length) points.push(`Uses an <strong>abstract</strong> class or method — meant to be extended/implemented rather than used directly.`);
+      if (privateFields.length && (getters.length || setters.length)) points.push(`Fields are marked <strong>private</strong> with public getter/setter methods — this is <strong>encapsulation</strong>, protecting internal state from direct outside access.`);
+      else if (privateFields.length) points.push(`Uses <strong>private</strong> fields to restrict direct access from outside the class (encapsulation).`);
+      if (overrides.length) points.push(`Has ${overrides.length} <strong>@Override</strong> method${overrides.length > 1 ? 's' : ''} — this is <strong>polymorphism</strong>, where a subclass provides its own version of a parent method.`);
+      const overloadCandidates = {};
+      [...code.matchAll(/\b\w+\s+(\w+)\s*\(/g)].forEach(m => { overloadCandidates[m[1]] = (overloadCandidates[m[1]] || 0) + 1; });
+      if (Object.values(overloadCandidates).some(c => c > 1)) points.push(`Multiple methods share the same name with different parameters — likely <strong>method overloading</strong>, another form of polymorphism.`);
+      if (constructors) points.push(`Defines a constructor to initialise new objects when they're created.`);
+      if (publicMethods.length) points.push(`Exposes ${publicMethods.length} public method${publicMethods.length > 1 ? 's' : ''} as the class's external interface.`);
+      return points;
+    }
+
+    function analyseDataStructuresAlgorithms(code) {
+      const points = [];
+      const structures = [
+        { re: /\bArrayList\s*</, label: 'ArrayList (dynamic array)' },
+        { re: /\bLinkedList\s*</, label: 'LinkedList' },
+        { re: /\bHashMap\s*</, label: 'HashMap (key–value store)' },
+        { re: /\bHashSet\s*</, label: 'HashSet' },
+        { re: /\bStack\s*</, label: 'Stack (LIFO)' },
+        { re: /\b(Queue|Deque)\s*</, label: 'Queue/Deque (FIFO)' },
+        { re: /\bTreeMap\s*</, label: 'TreeMap (sorted map)' },
+        { re: /\[\s*\]\s*\w+|\w+\s*\[\s*\]/, label: 'array' },
+      ];
+      const found = structures.filter(s => s.re.test(code)).map(s => s.label);
+      if (found.length) points.push(`Uses these data structures: ${found.join(', ')}.`);
+
+      const nested = /for\s*\([^)]*\)\s*\{[^{}]*for\s*\(/s.test(code) || /while\s*\([^)]*\)\s*\{[^{}]*while\s*\(/s.test(code);
+      if (nested) points.push(`Contains <strong>nested loops</strong> — worth checking the time complexity, as this often means O(n²) or worse.`);
+
+      const recursion = (() => {
+        const nameMatch = code.match(/\b\w+\s+(\w+)\s*\([^)]*\)\s*\{/);
+        const name = nameMatch && nameMatch[1];
+        if (!name) return false;
+        const calls = (code.match(new RegExp(`\\b${name}\\s*\\(`, 'g')) || []).length;
+        return calls > 1;
+      })();
+      if (recursion) points.push(`This method calls itself — a <strong>recursive algorithm</strong>. Check for a clear base case to avoid infinite recursion.`);
+
+      const sortWords = /\.sort\(|Collections\.sort|Arrays\.sort|bubbleSort|quickSort|mergeSort|insertionSort|selectionSort/i;
+      if (sortWords.test(code)) points.push(`Implements or calls a <strong>sorting algorithm</strong>.`);
+
+      const searchWords = /binarySearch|linearSearch/i;
+      if (searchWords.test(code)) points.push(`Implements a <strong>search algorithm</strong> (binary or linear search).`);
+
+      if (/\bnew\s+Node\s*\(|\.next\s*=|\.next;/.test(code)) points.push(`References node/<code>.next</code> pointers — this looks like a hand-built linked structure (linked list, tree, or graph).`);
+
+      return points;
+    }
+
+    function analyse(code) {
+      const lang = detectLanguage(code);
+      const lines = code.split('\n').filter(l => l.trim().length > 0);
+      const funcCount = (code.match(/\bfunction\b|\bdef\s+\w+\s*\(|\w+\s*\([^)]*\)\s*\{|public\s+\w+\s+\w+\s*\(/g) || []).length;
+      const classCount = (code.match(/\bclass\s+\w+/g) || []).length;
+      const loopCount = (code.match(/\bfor\s*\(|\bwhile\s*\(|\bfor\s+\w+\s+in\b/g) || []).length;
+      const condCount = (code.match(/\bif\s*\(|\bif\s+.+:/g) || []).length;
+      const importCount = (code.match(/\bimport\s+|\brequire\(|#include\s*</g) || []).length;
+      const hasRecursion = (() => {
+        const nameMatch = code.match(/\bdef\s+(\w+)\s*\(|\bfunction\s+(\w+)\s*\(/);
+        const name = nameMatch && (nameMatch[1] || nameMatch[2]);
+        if (!name) return false;
+        const calls = (code.match(new RegExp(`\\b${name}\\s*\\(`, 'g')) || []).length;
+        return calls > 1;
+      })();
+      const hasFetchOrApi = /\bfetch\(|\brequests\.(get|post)|XMLHttpRequest|axios\./.test(code);
+      const hasDom = /document\.(getElementById|querySelector|createElement)/.test(code);
+      const hasDb = /\b(SELECT|INSERT|UPDATE|DELETE)\b/i.test(code);
+      const hasSort = /\.sort\(|sorted\(|bubble|quicksort|mergesort/i.test(code);
+      const hasArrayLoop = /\.map\(|\.filter\(|\.reduce\(|\bfor\b.*\bin\b/.test(code);
+
+      const points = [];
+      points.push(`${lines.length} line${lines.length === 1 ? '' : 's'} of code, detected as <strong>${lang}</strong>.`);
+
+      if (lang === 'Java') {
+        const oopPoints = analyseJavaOOP(code);
+        const dsaPoints = analyseDataStructuresAlgorithms(code);
+        if (classCount) points.push(`Defines ${classCount} class${classCount > 1 ? 'es' : ''}.`);
+        if (funcCount) points.push(`Contains roughly ${funcCount} method${funcCount > 1 ? 's' : ''}.`);
+        if (oopPoints.length) points.push('<strong>Object-oriented principles:</strong>');
+        points.push(...oopPoints);
+        if (dsaPoints.length) points.push('<strong>Data structures &amp; algorithms:</strong>');
+        points.push(...dsaPoints);
+        if (loopCount) points.push(`Uses ${loopCount} loop${loopCount > 1 ? 's' : ''}.`);
+        if (condCount) points.push(`Has ${condCount} conditional branch${condCount > 1 ? 'es' : ''}.`);
+        if (importCount) points.push(`Pulls in ${importCount} import${importCount > 1 ? 's' : ''}.`);
+        if (points.length <= 2) points.push(`No strong OOP or data-structure patterns detected — this may be a short procedural snippet.`);
+        return { lang, points };
+      }
+
+      if (classCount) points.push(`Defines ${classCount} class${classCount > 1 ? 'es' : ''} — likely organising related data and behaviour together.`);
+      if (funcCount) points.push(`Contains roughly ${funcCount} function${funcCount > 1 ? 's' : ''}/method${funcCount > 1 ? 's' : ''}.`);
+      if (hasRecursion) points.push(`At least one function appears to call itself — this looks like <strong>recursion</strong>.`);
+      if (loopCount) points.push(`Uses ${loopCount} loop${loopCount > 1 ? 's' : ''} to repeat work over a range or collection.`);
+      if (condCount) points.push(`Has ${condCount} conditional branch${condCount > 1 ? 'es' : ''} controlling its logic.`);
+      if (importCount) points.push(`Pulls in ${importCount} external import${importCount > 1 ? 's' : ''}/dependenc${importCount > 1 ? 'ies' : 'y'}.`);
+      if (hasFetchOrApi) points.push(`Makes an outbound <strong>network/API call</strong> (fetch, requests, or similar).`);
+      if (hasDom) points.push(`Reads or updates the page's <strong>DOM</strong> — this is browser-facing UI code.`);
+      if (hasDb) points.push(`Includes a <strong>database query</strong> (SQL statement).`);
+      if (hasSort) points.push(`Looks like it's <strong>sorting</strong> a collection.`);
+      if (hasArrayLoop) points.push(`Transforms a collection using map/filter/reduce-style logic.`);
+      if (points.length === 1) points.push(`No strong structural patterns detected — this may be a short snippet, config, or markup.`);
+
+      return { lang, points };
+    }
+
+    explainBtn.addEventListener('click', () => {
+      const code = codeInput.value;
+      if (!code.trim()) {
+        out.innerHTML = '<span class="placeholder">Paste some code first.</span>';
         return;
       }
-      codeExplanation.textContent = "Explaining code, please wait...";
-
-      try {
-        // Replace with your backend endpoint (example: /explain-code)
-        const response = await fetch("http://localhost:5000/explain-code", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ code: userCode })
-        });
-
-        const data = await response.json();
-        codeExplanation.textContent = data.explanation || "Could not generate explanation.";
-      } catch (err) {
-        console.error(err);
-        codeExplanation.textContent = "Error: Unable to explain the code at the moment.";
-      }
+      const { lang, points } = analyse(code);
+      out.innerHTML = `<span class="lang-badge">${lang}</span><ul>${points.map(p => `<li>${p}</li>`).join('')}</ul>`;
     });
   })();
 </script>
