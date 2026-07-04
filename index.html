@@ -131,6 +131,106 @@
     .status-line{justify-content:center;}
   }
 
+  /* ---------- ACHIEVEMENT ---------- */
+  .achievement-grid{
+    display:grid;
+    grid-template-columns:340px 1fr;
+    gap:30px;
+    align-items:center;
+  }
+  .achievement-image{
+      border-radius:14px;
+      overflow:hidden;
+      border:2px solid var(--brass);
+      background:var(--card);
+  }
+  .achievement-image img{
+      width:100%;
+      height:500px;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+  }
+  .achievement-content{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+  }
+  .achievement-card{
+      background:var(--card);
+      border:1px solid var(--card-border);
+      padding:24px;
+      border-radius:12px;
+  }
+  .achievement-card i{
+      color:var(--brass);
+      font-size:28px;
+      margin-bottom:15px;
+  }
+  .achievement-card h3{
+      margin-bottom:10px;
+  }
+  .achievement-card p{
+      color:var(--ink-soft);
+  }
+  @media(max-width:900px){
+      .achievement-grid{
+          grid-template-columns:1fr;
+      }
+      .achievement-image img{
+          height:420px;
+      }
+  }
+
+  /* ---------- TECH ---------- */
+  .tech-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:20px;
+  margin-top:20px;
+  }
+  .tech-item{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  border-radius:12px;
+  padding:24px;
+  text-align:center;
+  transition:.25s;
+  }
+  .tech-item:hover{
+  transform:translateY(-5px);
+  border-color:var(--brass);
+  }
+  .tech-item i{
+  font-size:42px;
+  margin-bottom:15px;
+  color:var(--brass);
+  }
+  .tech-item span{
+  display:block;
+  font-weight:600;
+  }
+  
+  /* ---------- SEEKING ---------- */
+  .seeking-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin:14px 0;
+    padding:10px 18px;
+    border-radius:999px;
+    background:var(--brass-soft);
+    border:1px solid var(--brass);
+    color:var(--brass);
+    font-size:13px;
+    font-weight:600;
+    flex-wrap:wrap;
+  }
+  
+  .seeking-badge i{
+      font-size:14px;
+  }
+  
   /* ---------- SECTION SCAFFOLD ---------- */
   section{padding:54px 0;}
   section + section{border-top:1px solid var(--card-border);}
@@ -282,8 +382,10 @@
     </a>
     <nav class="links">
       <a href="#about">About</a>
+      <a href="#achievements">Achievements</a>
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
+      <a href="#tech-stack">Tech Stack</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -307,6 +409,11 @@
     </div>
     <div>
       <div class="status-line"><span class="status-dot"></span>Open to junior IT &amp; developer roles</div>
+      <div class="seeking-badge">
+        <i class="fa-solid fa-briefcase"></i>
+          Currently Seeking:
+          Graduate Programmes • Learnerships • Junior Software Developer Roles
+      </div>
       <h1 class="hero-name serif">Keletso Ramothibe</h1>
       <p class="hero-role">     BSc IT Graduate · Software Developer · Cloud & AI Enthusiast · Problem Solver </p>
       <p class="hero-bio">I build across full-stack development, SQL databases, and network infrastructure. Hands-on experience came from a C# desktop system built solo and a Firebase web app shipped with a team in 36 hours at a campus hackathon. I learn fast, I'm dependable under deadline pressure, and I care about shipping things that actually work.</p>
@@ -331,6 +438,49 @@
       <span class="pill">SEPEDI</span>
     </div>
   </div>
+</section>
+
+  <section id="achievements">
+    <div class="wrap">
+        <span class="eyebrow">Achievements</span>
+        <h2 class="sec-title serif">
+            Featured Achievements
+        </h2>
+        <div class="achievement-grid">
+            <div class="achievement-image">
+                <img src="grad_pic.jpg"
+                     alt="Graduation Photo"
+                     onerror="this.src='https://placehold.co/600x700/1B222A/D4A24C?text=Graduation';">
+            </div>
+            <div class="achievement-content">
+                <div class="achievement-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>Bachelor of Science in Information Technology</h3>
+                    <p>
+                        Successfully graduated from
+                        <strong>North-West University</strong>,
+                        demonstrating strong technical knowledge in
+                        software development, databases,
+                        networking and systems analysis.
+                    </p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>Academic Achievement</h3>
+                    <p>
+                        Overall Academic Average
+                        <strong>66.82%</strong>
+                    </p>
+                    <a class="btn"
+                       href="Academic_Transcript.pdf"
+                       target="_blank">
+                        <i class="fa-solid fa-file-lines"></i>
+                        View Academic Transcript
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="work">
@@ -501,6 +651,74 @@
               Adaptability<br>
               Time Management
           </div>
+    </div>
+  </div>
+</section>
+
+<section id="tech-stack">
+  <div class="wrap">
+    <span class="eyebrow">
+    Technology
+    </span>
+      <h2 class="sec-title serif">
+      Tech Stack
+      </h2>
+      
+      <div class="tech-grid">
+      <div class="tech-item">
+      <i class="fa-brands fa-microsoft"></i>
+      <span>Azure</span>
+      </div>
+        
+      <div class="tech-item">
+      <i class="fa-brands fa-java"></i>
+      <span>Java</span>
+      </div>
+      
+      <div class="tech-item">
+      <i class="fa-brands fa-python"></i>
+      <span>Python</span>
+        
+      </div>
+      <div class="tech-item">
+      <i class="fa-solid fa-database"></i>
+      <span>SQL</span>
+      </div>
+        
+      <div class="tech-item">
+      <i class="fa-brands fa-git-alt"></i>
+      <span>Git</span>
+      </div>
+      
+      <div class="tech-item">
+      <i class="fa-brands fa-github"></i>
+      <span>GitHub</span>
+      </div>
+      
+      <div class="tech-item">
+      <i class="fa-brands fa-html5"></i>
+      <span>HTML5</span>
+      </div>
+      
+      <div class="tech-item">
+      <i class="fa-brands fa-css3-alt"></i>
+      <span>CSS3</span>
+      </div>
+      
+      <div class="tech-item">
+      <i class="fa-brands fa-js"></i>
+      <span>JavaScript</span>
+      </div>
+      
+      <div class="tech-item">
+      <i class="fa-solid fa-code"></i>
+      <span>C#</span>
+      </div>
+    
+      <div class="tech-item">
+      <i class="fa-solid fa-terminal"></i>
+      <span>C++</span>
+      </div>
     </div>
   </div>
 </section>
