@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-
+ 
 <style>
   :root{
     --bg:#12161B;
@@ -58,7 +58,7 @@
   .wrap{max-width:1020px;margin:0 auto;padding:0 24px;}
   ::selection{background:var(--brass);color:#1A1A1A;}
   *:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
-
+ 
   /* ---------- NAV ---------- */
   header.nav{
     position:sticky;top:0;z-index:60;
@@ -86,7 +86,7 @@
   }
   .icon-btn:hover{border-color:var(--brass);color:var(--brass);}
   @media(max-width:760px){ nav.links{display:none;} }
-
+ 
   /* ---------- BUTTONS ---------- */
   .btn{
     display:inline-flex;align-items:center;gap:8px;
@@ -98,7 +98,7 @@
   .btn.primary{background:var(--brass);border-color:var(--brass);color:#1A1409;}
   .btn.primary:hover{background:#C2933F;color:#1A1409;}
   .btn.full{width:100%;justify-content:center;}
-
+ 
   /* ---------- HERO ---------- */
   .hero{padding:64px 0 56px;}
   .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;}
@@ -130,7 +130,7 @@
     .hero-actions{justify-content:center;}
     .status-line{justify-content:center;}
   }
-
+ 
   /* ---------- ACHIEVEMENT ---------- */
   .achievement-grid{
     display:grid;
@@ -181,7 +181,7 @@
           height:420px;
       }
   }
-
+ 
   /* ---------- TECH ---------- */
   .tech-grid{
   display:grid;
@@ -240,7 +240,7 @@
   }
   .sec-title{font-family:'Fraunces',serif;font-size:26px;font-weight:600;margin-bottom:30px;}
   .sec-intro{color:var(--ink-soft);font-size:14.5px;margin-top:-20px;margin-bottom:28px;max-width:64ch;}
-
+ 
   /* ---------- ABOUT ---------- */
   .about-text{color:var(--ink-soft);font-size:15.5px;max-width:68ch;}
   .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
@@ -248,7 +248,7 @@
     font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-soft);
     border:1px solid var(--card-border);border-radius:20px;padding:6px 13px;background:var(--card);
   }
-
+ 
   /* ---------- CARDS / PROJECTS ---------- */
   .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
   .card{
@@ -269,7 +269,13 @@
   .card .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
   .card .links a{font-size:12.8px;font-weight:600;color:var(--brass);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
   .card .links a:hover{text-decoration:underline;}
-
+  .card-thumb{
+    width:calc(100% + 44px);margin:-22px -22px 16px;
+    border-radius:var(--radius) var(--radius) 0 0;
+    overflow:hidden;border-bottom:1px solid var(--card-border);
+  }
+  .card-thumb img{width:100%;height:auto;display:block;}
+ 
   /* converter widget */
   .card.wide{grid-column:1 / -1;}
   .conv-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
@@ -292,7 +298,7 @@
   .cat-tab:hover{border-color:var(--brass);color:var(--brass);}
   .cat-tab.active{background:var(--brass);border-color:var(--brass);color:#1A1409;}
   .conv-note{margin-top:10px;font-size:11.5px;color:var(--ink-faint);}
-
+ 
   /* code explainer */
   .explainer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px;}
   @media(max-width:760px){.explainer-grid{grid-template-columns:1fr;}}
@@ -314,7 +320,7 @@
   .explain-output ul{margin:8px 0 0 0;padding-left:18px;}
   .explain-output li{margin-bottom:6px;}
   .explain-output .placeholder{color:var(--ink-faint);}
-
+ 
   /* ---------- SKILLS ---------- */
   .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--card-border);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;}
   .skill-cell{background:var(--card);padding:20px;}
@@ -322,7 +328,7 @@
   .skill-cell .cat i{color:var(--brass);font-size:13px;width:16px;}
   .skill-cell .cat span{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);}
   .skill-cell .items{font-size:14px;color:var(--ink);}
-
+ 
   /* ---------- CERTS / LEARNING ---------- */
   .cert-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 20px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:1px;}
   .cert-left{display:flex;align-items:center;gap:14px;}
@@ -330,7 +336,7 @@
   .cert-name{font-weight:600;font-size:14.5px;}
   .cert-issuer{font-size:12.5px;color:var(--ink-soft);}
   .cert-date{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-faint);}
-
+ 
   .learning-grid{display:flex;flex-wrap:wrap;gap:10px;}
   .learning-pill{
     display:flex;align-items:center;gap:8px;
@@ -340,7 +346,7 @@
   .learning-pill .lp-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);}
   .learning-pill.active .lp-dot{background:var(--brass);animation:pulse 1.8s infinite;}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,162,76,.4);}70%{box-shadow:0 0 0 6px rgba(212,162,76,0);}100%{box-shadow:0 0 0 0 rgba(212,162,76,0);}}
-
+ 
   /* ---------- CONTACT ---------- */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
   @media(max-width:760px){.contact-grid{grid-template-columns:1fr;}}
@@ -354,7 +360,7 @@
     display:flex;align-items:center;justify-content:center;color:var(--ink-soft);text-decoration:none;transition:.15s;
   }
   .socials a:hover{border-color:var(--brass);color:var(--brass);}
-
+ 
   form label{font-size:12.5px;color:var(--ink-soft);display:block;margin-bottom:6px;font-family:'JetBrains Mono',monospace;}
   form .field{margin-bottom:16px;}
   form input, form textarea{
@@ -366,14 +372,14 @@
   #form-message{margin-top:14px;padding:11px 14px;border-radius:7px;font-size:13.5px;display:none;}
   #form-message.ok{background:rgba(91,168,140,.12);color:var(--good);display:block;}
   #form-message.err{background:rgba(201,106,92,.12);color:var(--bad);display:block;}
-
+ 
   footer{padding:34px 0 50px;text-align:center;}
   footer p{font-size:12.5px;color:var(--ink-faint);font-family:'JetBrains Mono',monospace;}
   footer .resume-line{margin-bottom:16px;}
 </style>
 </head>
 <body>
-
+ 
 <header class="nav">
   <div class="nav-inner">
     <a class="brand" href="#top">
@@ -399,9 +405,9 @@
     </div>
   </div>
 </header>
-
+ 
 <div id="top"></div>
-
+ 
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="avatar-wrap">
@@ -424,10 +430,9 @@
   </div>
   </div>
 </section>
-
+ 
 <section id="about">
   <div class="wrap">
-    <div class="wrap">
     <span class="eyebrow">About</span>
     <h2 class="sec-title serif">Beyond the code</h2>
     <p class="about-text">I got into IT to keep up with how fast technology moves — and to be able to protect myself digitally while building the kinds of systems I actually want to use. That same instinct shows up in how I work: I'm a team player at heart, but I'll step up and lead when things stall. I plan before I build, and I genuinely like being pushed past what I think I can do — that's usually where the growth happens.</p>
@@ -441,9 +446,8 @@
       <span class="pill">SUPERHERO FANDOM</span>
     </div>
   </div>
-  </div>
 </section>
-
+ 
   <section id="achievements">
     <div class="wrap">
         <span class="eyebrow">Achievements</span>
@@ -486,12 +490,12 @@
         </div>
     </div>
 </section>
-
+ 
 <section id="work">
   <div class="wrap">
     <span class="eyebrow">Work</span>
     <h2 class="sec-title serif">Selected projects</h2>
-
+ 
     <div class="grid-2">
       <article class="card">
         <div class="card-head">
@@ -507,7 +511,7 @@
           <a href="https://github.com/kl99-chi/awesome-athletics-club-system" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>Repository</a>
         </div>
       </article>
-
+ 
       <article class="card">
         <div class="card-head">
           <div class="card-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
@@ -523,7 +527,25 @@
           <a href="K_RAMOTHIBE_CERTIFICATE.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-certificate"></i>Hackathon certificate</a>
         </div>
       </article>
-
+ 
+      <article class="card wide">
+        <div class="card-thumb">
+          <img src="clearvue_dashboard.png" alt="ClearVue Integrated Business Dashboard showing revenue KPIs and monthly trend chart">
+        </div>
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>ClearVue Sales Reporting System</h3>
+        </div>
+        <p>A real-time NoSQL sales reporting system built for a client brief (ClearVue Ltd.), replacing a legacy MS Access setup. MongoDB stores sales, customer, product, and supplier data as flexible collections; Kafka streams new transactions in as they happen; Python (Pandas) handles cleaning, transformation, and aggregation; and an interactive Dash/Plotly dashboard surfaces revenue KPIs, growth rate, regional performance, and customer/supplier insights across daily, weekly, monthly, and yearly views.</p>
+        <div class="meta">ROLE: TEAM MEMBER (7-PERSON GROUP) · 2025</div>
+        <div class="tag-row">
+          <span class="tag">MongoDB</span><span class="tag">Kafka</span><span class="tag">Python / Pandas</span><span class="tag">Plotly &amp; Dash</span>
+        </div>
+        <div class="links">
+          <a href="https://github.com/kl99-chi/clearvue-reporting-system" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>Repository</a>
+        </div>
+      </article>
+ 
       <article class="card wide">
         <div class="card-head">
           <div class="card-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
@@ -547,7 +569,7 @@
         <div id="conversion-result"></div>
         <div class="conv-note" id="conv-note"></div>
       </article>
-
+ 
       <article class="card wide">
         <div class="card-head">
           <div class="card-icon"><i class="fa-solid fa-code"></i></div>
@@ -568,7 +590,7 @@
           </div>
         </div>
       </article>
-
+ 
       <article class="card">
         <div class="card-head">
           <div class="card-icon"><i class="fa-solid fa-folder-open"></i></div>
@@ -582,7 +604,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="skills">
   <div class="wrap">
     <span class="eyebrow">Skills</span>
@@ -656,7 +678,7 @@
               Time Management
           </div>
       </div>
-
+ 
        <div class="skill-cell">
           <div class="cat">
               <i class="fa-solid fa-users"></i>
@@ -673,7 +695,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="tech-stack">
   <div class="wrap">
     <span class="eyebrow">
@@ -741,12 +763,12 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="certifications">
   <div class="wrap">
     <span class="eyebrow">Certifications</span>
     <h2 class="sec-title serif">Certifications &amp; online courses</h2>
-
+ 
     <div class="cert-row">
       <div class="cert-left">
         <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
@@ -760,7 +782,7 @@
         <a class="btn" href="Machine_Learning_certificate.pdf" target="_blank" style="padding:7px 14px;font-size:12.5px;">View</a>
       </div>
     </div>
-
+ 
     <div class="cert-row">
       <div class="cert-left">
         <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
@@ -774,7 +796,7 @@
         <a class="btn" href="MATLAB_certificate.pdf" target="_blank" style="padding:7px 14px;font-size:12.5px;">View</a>
       </div>
     </div>
-
+ 
     <div class="cert-row" style="margin-bottom:0;">
       <div class="cert-left">
         <div class="cert-icon"><i class="fa-brands fa-java"></i></div>
@@ -788,7 +810,7 @@
         <a class="btn" href="Java_certificate.pdf" target="_blank" style="padding:7px 14px;font-size:12.5px;">View</a>
       </div>
     </div>
-
+ 
     <div class="cert-row">
       <div class="cert-left">
           <div class="cert-icon">
@@ -813,7 +835,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="learning">
   <div class="wrap">
     <span class="eyebrow">Currently learning</span>
@@ -827,13 +849,13 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="contact">
   <div class="wrap">
     <span class="eyebrow">Contact</span>
     <h2 class="sec-title serif">Let's talk</h2>
     <p class="sec-intro">Open to junior IT and developer roles. The fastest way to reach me is email — I usually reply within a day.</p>
-
+ 
     <div class="contact-grid">
       <div class="contact-card">
         <div class="contact-direct">
@@ -847,7 +869,7 @@
           <a href="https://www.facebook.com/share/1CX25MDmmW/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
       </div>
-
+ 
       <div class="contact-card">
         <form id="contact-form" action="https://formspree.io/f/xyzpwwok" method="POST">
           <div class="field">
@@ -869,7 +891,7 @@
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <div class="wrap">
     <div class="resume-line">
@@ -878,7 +900,7 @@
     <p>© 2026 Keletso Ramothibe • Designed &amp; Developed by Keletso Ramothibe</p>
   </div>
 </footer>
-
+ 
 <script>
   // smooth-scroll for in-page links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -889,7 +911,7 @@
       if (dest) { e.preventDefault(); dest.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
-
+ 
   // theme toggle, persists for the session
   const root = document.documentElement;
   const toggleBtn = document.getElementById('theme-toggle');
@@ -903,7 +925,7 @@
     const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     applyTheme(next);
   });
-
+ 
   // contact form -> Formspree
   (function () {
     const contactForm = document.getElementById('contact-form');
@@ -934,7 +956,7 @@
       }
     });
   })();
-
+ 
   // ---------- Universal Converter ----------
   (function () {
     const UNITS = {
@@ -977,7 +999,7 @@
         }
       }
     };
-
+ 
     const tabsEl = document.getElementById('conv-tabs');
     const fromEl = document.getElementById('conv-from');
     const toEl = document.getElementById('conv-to');
@@ -986,7 +1008,7 @@
     const noteEl = document.getElementById('conv-note');
     const convertBtn = document.getElementById('convert-btn');
     let activeCat = 'temperature';
-
+ 
     function populateUnits(cat) {
       const def = UNITS[cat];
       const keys = Object.keys(def.units);
@@ -996,7 +1018,7 @@
       resultEl.textContent = '';
       noteEl.textContent = cat === 'currency' ? 'Live rates fetched from open.er-api.com — falls back to an error message if offline.' : '';
     }
-
+ 
     tabsEl.addEventListener('click', (e) => {
       const btn = e.target.closest('.cat-tab');
       if (!btn) return;
@@ -1005,7 +1027,7 @@
       activeCat = btn.dataset.cat;
       populateUnits(activeCat);
     });
-
+ 
     convertBtn.addEventListener('click', async () => {
       const value = parseFloat(inputEl.value);
       if (isNaN(value)) { resultEl.textContent = 'Enter a number to convert.'; return; }
@@ -1020,16 +1042,16 @@
         resultEl.textContent = 'Could not fetch a live rate right now — try again in a moment.';
       }
     });
-
+ 
     populateUnits(activeCat);
   })();
-
+ 
   // ---------- Code Explainer (static analysis, runs fully client-side) ----------
   (function () {
     const codeInput = document.getElementById('code-input');
     const explainBtn = document.getElementById('explain-btn');
     const out = document.getElementById('code-explanation');
-
+ 
     function detectLanguage(code) {
       const tests = [
         { lang: 'SQL', re: /\b(SELECT|INSERT INTO|UPDATE|DELETE FROM|CREATE TABLE)\b/i },
@@ -1043,7 +1065,7 @@
       for (const t of tests) if (t.re.test(code)) return t.lang;
       return 'Unrecognised / generic';
     }
-
+ 
     function analyseJavaOOP(code) {
       const points = [];
       const classMatches = [...code.matchAll(/\bclass\s+(\w+)(?:\s+extends\s+(\w+))?(?:\s+implements\s+([\w,\s]+))?/g)];
@@ -1055,7 +1077,7 @@
       const setters = code.match(/\bpublic\s+void\s+set\w+\s*\(/g) || [];
       const overrides = code.match(/@Override/g) || [];
       const constructors = classMatches.length ? classMatches.filter(m => new RegExp(`\\b${m[1]}\\s*\\([^)]*\\)\\s*\\{`).test(code)).length : 0;
-
+ 
       classMatches.forEach(m => {
         const [, name, parent, impl] = m;
         if (parent) points.push(`Class <strong>${name}</strong> extends <strong>${parent}</strong> — this is <strong>inheritance</strong>, reusing and specialising behaviour from a parent class.`);
@@ -1073,7 +1095,7 @@
       if (publicMethods.length) points.push(`Exposes ${publicMethods.length} public method${publicMethods.length > 1 ? 's' : ''} as the class's external interface.`);
       return points;
     }
-
+ 
     function analyseDataStructuresAlgorithms(code) {
       const points = [];
       const structures = [
@@ -1088,10 +1110,10 @@
       ];
       const found = structures.filter(s => s.re.test(code)).map(s => s.label);
       if (found.length) points.push(`Uses these data structures: ${found.join(', ')}.`);
-
+ 
       const nested = /for\s*\([^)]*\)\s*\{[^{}]*for\s*\(/s.test(code) || /while\s*\([^)]*\)\s*\{[^{}]*while\s*\(/s.test(code);
       if (nested) points.push(`Contains <strong>nested loops</strong> — worth checking the time complexity, as this often means O(n²) or worse.`);
-
+ 
       const recursion = (() => {
         const nameMatch = code.match(/\b\w+\s+(\w+)\s*\([^)]*\)\s*\{/);
         const name = nameMatch && nameMatch[1];
@@ -1100,18 +1122,18 @@
         return calls > 1;
       })();
       if (recursion) points.push(`This method calls itself — a <strong>recursive algorithm</strong>. Check for a clear base case to avoid infinite recursion.`);
-
+ 
       const sortWords = /\.sort\(|Collections\.sort|Arrays\.sort|bubbleSort|quickSort|mergeSort|insertionSort|selectionSort/i;
       if (sortWords.test(code)) points.push(`Implements or calls a <strong>sorting algorithm</strong>.`);
-
+ 
       const searchWords = /binarySearch|linearSearch/i;
       if (searchWords.test(code)) points.push(`Implements a <strong>search algorithm</strong> (binary or linear search).`);
-
+ 
       if (/\bnew\s+Node\s*\(|\.next\s*=|\.next;/.test(code)) points.push(`References node/<code>.next</code> pointers — this looks like a hand-built linked structure (linked list, tree, or graph).`);
-
+ 
       return points;
     }
-
+ 
     function analyse(code) {
       const lang = detectLanguage(code);
       const lines = code.split('\n').filter(l => l.trim().length > 0);
@@ -1132,10 +1154,10 @@
       const hasDb = /\b(SELECT|INSERT|UPDATE|DELETE)\b/i.test(code);
       const hasSort = /\.sort\(|sorted\(|bubble|quicksort|mergesort/i.test(code);
       const hasArrayLoop = /\.map\(|\.filter\(|\.reduce\(|\bfor\b.*\bin\b/.test(code);
-
+ 
       const points = [];
       points.push(`${lines.length} line${lines.length === 1 ? '' : 's'} of code, detected as <strong>${lang}</strong>.`);
-
+ 
       if (lang === 'Java') {
         const oopPoints = analyseJavaOOP(code);
         const dsaPoints = analyseDataStructuresAlgorithms(code);
@@ -1151,7 +1173,7 @@
         if (points.length <= 2) points.push(`No strong OOP or data-structure patterns detected — this may be a short procedural snippet.`);
         return { lang, points };
       }
-
+ 
       if (classCount) points.push(`Defines ${classCount} class${classCount > 1 ? 'es' : ''} — likely organising related data and behaviour together.`);
       if (funcCount) points.push(`Contains roughly ${funcCount} function${funcCount > 1 ? 's' : ''}/method${funcCount > 1 ? 's' : ''}.`);
       if (hasRecursion) points.push(`At least one function appears to call itself — this looks like <strong>recursion</strong>.`);
@@ -1164,10 +1186,10 @@
       if (hasSort) points.push(`Looks like it's <strong>sorting</strong> a collection.`);
       if (hasArrayLoop) points.push(`Transforms a collection using map/filter/reduce-style logic.`);
       if (points.length === 1) points.push(`No strong structural patterns detected — this may be a short snippet, config, or markup.`);
-
+ 
       return { lang, points };
     }
-
+ 
     explainBtn.addEventListener('click', () => {
       const code = codeInput.value;
       if (!code.trim()) {
@@ -1179,6 +1201,6 @@
     });
   })();
 </script>
-
+ 
 </body>
 </html>
