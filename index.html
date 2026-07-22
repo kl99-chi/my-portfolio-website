@@ -275,6 +275,23 @@
     overflow:hidden;border-bottom:1px solid var(--card-border);
   }
   .card-thumb img{width:100%;height:auto;display:block;}
+
+  /* clearvu dashboard render */
+  .render-note {
+    margin-top: 14px;
+    padding: 10px 12px;
+    border-left: 4px solid var(--accent);
+    background: rgba(56, 189, 248, 0.08);
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-radius: 6px;
+  }
+  
+  .render-note i {
+    color: var(--accent);
+    margin-right: 6px;
+  }
  
   /* converter widget */
   .card.wide{grid-column:1 / -1;}
@@ -535,15 +552,22 @@
           <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
           <h3>ClearVue Sales Reporting System</h3>
         </div>
-        <p>A real-time NoSQL sales reporting system built for a client brief (ClearVue Ltd.), replacing a legacy MS Access setup. MongoDB stores sales, customer, product, and supplier data as flexible collections; Kafka streams new transactions in as they happen; Python (Pandas) handles cleaning, transformation, and aggregation; and an interactive Dash/Plotly dashboard surfaces revenue KPIs, growth rate, regional performance, and customer/supplier insights across daily, weekly, monthly, and yearly views.</p>
+        <p>A real-time NoSQL sales reporting system built for a client brief (ClearVue Ltd.), replacing a legacy MS Access setup. MongoDB stores sales, customer, product, and supplier data as flexible collections; Kafka streams new transactions in as they happen; Python (Pandas) handles cleaning, transformation, and aggregation; Render for cloud deployment; and an interactive Dash/Plotly dashboard surfaces revenue KPIs, growth rate, regional performance, and customer/supplier insights across daily, weekly, monthly, and yearly views.</p>
         <div class="meta">ROLE: TEAM MEMBER (7-PERSON GROUP) · 2025</div>
         <div class="tag-row">
-          <span class="tag">MongoDB</span><span class="tag">Kafka</span><span class="tag">Python / Pandas</span><span class="tag">Plotly &amp; Dash</span>
+          <span class="tag">MongoDB</span><span class="tag">Kafka</span><span class="tag">Python / Pandas</span><span class="tag">Render</span><span class="tag">Plotly &amp; Dash</span>
         </div>
         <div class="links">
+          <a href="https://clearvue-reporting-system.onrender.com/" target="_blank" rel="noopener"><i class="fa-solid fa-circle-play"></i>Live Demo</a>
           <a href="https://github.com/kl99-chi/clearvue-reporting-system" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>Repository</a>
           <a href="https://drive.google.com/file/d/195VZLEuagkR-gE4jURMxakn5ljhNvjFO/view?usp=drive_link" target="_blank" rel="noopener"><i class="fa-solid fa-circle-play"></i>Visit video presentation</a>
         </div>
+
+        <p class="render-note">
+          <i class="fa-solid fa-circle-info"></i>
+          <strong>Live Demo:</strong> Hosted on Render's free tier. If the dashboard
+          has been idle, it may take up to a minute to start.
+        </p>
       </article>
  
       <article class="card wide">
