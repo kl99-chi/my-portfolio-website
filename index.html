@@ -131,55 +131,37 @@
     .status-line{justify-content:center;}
   }
  
-  /* ---------- ACHIEVEMENT ---------- */
-  .achievement-grid{
-    display:grid;
-    grid-template-columns:340px 1fr;
-    gap:30px;
-    align-items:center;
+  /* ---------- EDUCATION TIMELINE ---------- */
+  .timeline{position:relative;margin-top:8px;}
+  .timeline::before{
+    content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(to bottom, var(--brass), var(--card-border));
   }
-  .achievement-image{
-      border-radius:14px;
-      overflow:hidden;
-      border:2px solid var(--brass);
-      background:var(--card);
+  .timeline-item{position:relative;padding-left:64px;margin-bottom:28px;}
+  .timeline-item:last-child{margin-bottom:0;}
+  .timeline-node{
+    position:absolute;left:0;top:2px;width:48px;height:48px;border-radius:50%;
+    background:var(--card);border:2px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;color:var(--brass);font-size:17px;
+    z-index:2;
   }
-  .achievement-image img{
-      width:100%;
-      height:500px;
-      object-fit:cover;
-      object-position:center;
-      display:block;
+  .timeline-item.goal .timeline-node{
+    border-style:dashed;color:var(--ink-faint);border-color:var(--ink-faint);background:var(--bg-raise);
   }
-  .achievement-content{
-      display:flex;
-      flex-direction:column;
-      gap:20px;
+  .timeline-card{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+    padding:20px 22px;
   }
-  .achievement-card{
-      background:var(--card);
-      border:1px solid var(--card-border);
-      padding:24px;
-      border-radius:12px;
-  }
-  .achievement-card i{
-      color:var(--brass);
-      font-size:28px;
-      margin-bottom:15px;
-  }
-  .achievement-card h3{
-      margin-bottom:10px;
-  }
-  .achievement-card p{
-      color:var(--ink-soft);
-  }
-  @media(max-width:900px){
-      .achievement-grid{
-          grid-template-columns:1fr;
-      }
-      .achievement-image img{
-          height:420px;
-      }
+  .timeline-item.goal .timeline-card{border-style:dashed;background:transparent;}
+  .timeline-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .timeline-year{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--brass);letter-spacing:.04em;}
+  .timeline-item.goal .timeline-year{color:var(--ink-faint);}
+  .timeline-title{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-top:4px;}
+  .timeline-sub{font-size:13.5px;color:var(--ink-soft);margin-top:2px;}
+  .timeline-avg{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:8px;}
+  .goal-badge{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--ink-faint);border:1px solid var(--card-border);border-radius:20px;padding:3px 10px;
   }
  
   /* ---------- TECH ---------- */
@@ -280,16 +262,16 @@
   .render-note {
     margin-top: 14px;
     padding: 10px 12px;
-    border-left: 4px solid var(--accent);
-    background: rgba(56, 189, 248, 0.08);
-    color: var(--muted);
+    border-left: 4px solid var(--brass);
+    background: var(--brass-soft);
+    color: var(--ink-soft);
     font-size: 0.9rem;
     line-height: 1.5;
     border-radius: 6px;
   }
   
   .render-note i {
-    color: var(--accent);
+    color: var(--brass);
     margin-right: 6px;
   }
  
@@ -353,6 +335,7 @@
   .cert-name{font-weight:600;font-size:14.5px;}
   .cert-issuer{font-size:12.5px;color:var(--ink-soft);}
   .cert-date{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-faint);}
+  .cert-pending{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint);border:1px dashed var(--card-border);border-radius:20px;padding:5px 12px;}
   .learning-grid{display:flex;flex-wrap:wrap;gap:10px;}
   .learning-pill{
     display:flex;align-items:center;gap:8px;
@@ -404,7 +387,7 @@
     </a>
     <nav class="links">
       <a href="#about">About</a>
-      <a href="#achievements">Achievements</a>
+      <a href="#education">Education</a>
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
       <a href="#tech-stack">Tech Stack</a>
@@ -436,8 +419,8 @@
           Graduate Programmes • Learnerships • Junior Software Developer Roles
       </div>
       <h1 class="hero-name serif">Keletso Ramothibe</h1>
-      <p class="hero-role">     BSc IT Graduate · Software Developer · Cloud & AI Enthusiast · Problem Solver </p>
-      <p class="hero-bio">I build across full-stack web development, SQL databases, and network infrastructure. Hands-on experience came from leading a team to build a full ASP.NET web application for a club management system, and contributing to ClearVue, a real-time sales reporting system built with MongoDB, Kafka, and an interactive Dash dashboard; and independently building out the Firebase authentication and database layer for NWU Exchange, a student marketplace app. I learn fast, I'm dependable under deadline pressure, and I care about shipping things that actually work.</p>
+      <p class="hero-role">BSc IT Graduate · Software Developer · AI &amp; Cloud Enthusiast · Problem Solver</p>
+      <p class="hero-bio">I build across full-stack web development, SQL databases, and network infrastructure. Hands-on experience came from leading a team to build a full ASP.NET web application for a club management system, contributing to ClearVue, a real-time sales reporting system built with MongoDB, Kafka, and an interactive Dash dashboard, independently building out the Firebase authentication and database layer for NWU Exchange, a student marketplace app, and most recently developing CareerPilot AI, an AI-powered career assistant built with responsible AI practices. I learn fast, I'm dependable under deadline pressure, and I care about shipping things that actually work.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#contact"><i class="fa-solid fa-paper-plane"></i>&nbsp;Get in touch</a>
         <a class="btn" href="#work"><i class="fa-solid fa-folder-open"></i>&nbsp;See my work</a>
@@ -464,43 +447,49 @@
   </div>
 </section>
  
-  <section id="achievements">
+  <section id="education">
     <div class="wrap">
-        <span class="eyebrow">Achievements</span>
+        <span class="eyebrow">Education</span>
         <h2 class="sec-title serif">
-            Featured Achievements
+            Academic Journey
         </h2>
-        <div class="achievement-grid">
-            <div class="achievement-image">
-                <img src="grad_pic.jpg"
-                     alt="Graduation Photo"
-                     onerror="this.src='https://placehold.co/600x700/1B222A/D4A24C?text=Graduation';">
-            </div>
-            <div class="achievement-content">
-                <div class="achievement-card">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <h3>Bachelor of Science in Information Technology</h3>
-                    <p>
-                        Successfully graduated from
-                        <strong>North-West University</strong>,
-                        demonstrating strong technical knowledge in
-                        software development, databases,
-                        networking and systems analysis.
-                    </p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fa-solid fa-school"></i></div>
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <span class="timeline-year">2018 – 2022</span>
+                    </div>
+                    <div class="timeline-title">National Senior Certificate (Matric)</div>
+                    <div class="timeline-sub">Lethukuthula Secondary School</div>
+                    <div class="timeline-avg">Overall Average: 65%</div>
                 </div>
-                <div class="achievement-card">
-                    <i class="fa-solid fa-award"></i>
-                    <h3>Academic Achievement</h3>
-                    <p>
-                        Overall Academic Average
-                        <strong>66.82%</strong>
-                    </p>
-                    <a class="btn"
-                       href="Academic_Transcript.pdf"
-                       target="_blank">
-                        <i class="fa-solid fa-file-lines"></i>
-                        View Academic Transcript
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <span class="timeline-year">2023 – 2025</span>
+                    </div>
+                    <div class="timeline-title">Bachelor of Science in Information Technology</div>
+                    <div class="timeline-sub">North-West University</div>
+                    <div class="timeline-avg">Overall Average: 66.82%</div>
+                    <a class="btn" href="Academic_Transcript.pdf" target="_blank" style="margin-top:12px;padding:8px 14px;font-size:12.5px;">
+                        <i class="fa-solid fa-file-lines"></i>&nbsp;View Academic Transcript
                     </a>
+                </div>
+            </div>
+
+            <div class="timeline-item goal">
+                <div class="timeline-node"><i class="fa-solid fa-flag"></i></div>
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <span class="timeline-year">Goal</span>
+                        <span class="goal-badge">Planned</span>
+                    </div>
+                    <div class="timeline-title">BSc Honours in Information Technology</div>
+                    <div class="timeline-sub">Next step on the path — building toward this while working</div>
                 </div>
             </div>
         </div>
@@ -513,6 +502,21 @@
     <h2 class="sec-title serif">Selected projects</h2>
  
     <div class="grid-2">
+      <article class="card wide">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>CareerPilot AI</h3>
+        </div>
+        <p>An AI-powered career and productivity assistant for graduates and job seekers, built during the CAPACITI AI Skills Acceleration Programme. An integrated dashboard handles AI email generation, company research, task planning, career coaching, and application tracking — built with structured prompt engineering and responsible AI practices, including human oversight and AI-generated content disclaimers.</p>
+        <div class="meta">ROLE: SOLO PROJECT · 2026</div>
+        <div class="tag-row">
+          <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">shadcn/ui</span><span class="tag">Framer Motion</span><span class="tag">Lovable AI</span>
+        </div>
+        <div class="links">
+          <a href="https://careerace-ai-mate-kl99-chi.lovable.app" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</a>
+        </div>
+      </article>
+
        <article class="card wide">
         <div class="card-thumb">
           <img src="nwu-exchange.png" alt="NWU Exchange App landing page">
@@ -527,7 +531,7 @@
           <span class="tag">Firebase Studio</span><span class="tag">Firebase Auth</span><span class="tag">Firestore</span><span class="tag">Next.js API Routes</span><span class="tag">ImageKit</span><span class="tag">Vercel</span><span class="tag">Responsive UI</span>
         </div>
         <div class="links">
-          <a href="https://nwu-exchange-app-99.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-circle-play"></i>Live Demo</a>
+          <a href="https://nwu-exchange-app-99.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i>Visit app</a>
           <a href="https://github.com/kl99-chi/nwu-exchange-app" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>Repository</a>
           <a href="K_RAMOTHIBE_CERTIFICATE.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-certificate"></i>Hackathon certificate</a>
         </div>
@@ -640,25 +644,26 @@
     <div class="skills-grid">
       <div class="skill-cell">
         <div class="cat"><i class="fa-solid fa-code"></i><span>Programming</span></div>
-        <div class="items">Python, C#, Java, C++</div>
+        <div class="items">Python, C#, Java, C++, JavaScript, TypeScript</div>
       </div>
       <div class="skill-cell">
         <div class="cat"><i class="fa-solid fa-globe"></i><span>Web Development</span></div>
-        <div class="items">HTML, CSS, JavaScript</div>
+        <div class="items">HTML5, CSS3, React, Next.js, Flask, Tailwind CSS</div>
       </div>
       <div class="skill-cell">
         <div class="cat"><i class="fa-solid fa-database"></i><span>Databases</span></div>
-        <div class="items">SQL. NoSQL</div>
+        <div class="items">SQL Server, MySQL, MongoDB, Firestore, MS Access</div>
       </div>
       <div class="skill-cell">
         <div class="cat">
             <i class="fa-solid fa-cloud"></i>
-            <span>Cloud</span>
+            <span>Cloud &amp; AI</span>
         </div>
         <div class="items">
-            Microsoft Azure<br>
-            Oracle Cloud Infrastructure<br>
-            MangoDB
+            Microsoft Azure Fundamentals<br>
+            Firebase<br>
+            Vercel · Render · Netlify<br>
+            Generative AI &amp; Prompt Engineering
         </div>
       </div>
   
@@ -683,14 +688,12 @@
               Git<br>
               GitHub<br>
               Visual Studio<br>
-              Codeblocks<br>
-              BlueJ<br>
-              Python 3.14<br>
-              Draw.io<br>
-              MySQL Workbench<br>
               VS Code<br>
+              MySQL Workbench<br>
+              Draw.io<br>
               MATLAB<br>
-              Firebase Studio
+              Firebase Studio<br>
+              Microsoft 365
           </div>
       </div>
   
@@ -704,7 +707,7 @@
               Communication<br>
               Team Collaboration<br>
               Adaptability<br>
-              Time Management
+              Continuous Learning
           </div>
       </div>
  
@@ -789,6 +792,11 @@
       <i class="fa-solid fa-terminal"></i>
       <span>C++</span>
       </div>
+
+      <div class="tech-item">
+      <i class="fa-solid fa-react"></i>
+      <span>React</span>
+      </div>
     </div>
   </div>
 </section>
@@ -797,6 +805,33 @@
   <div class="wrap">
     <span class="eyebrow">Certifications</span>
     <h2 class="sec-title serif">Certifications &amp; online courses</h2>
+
+    <div class="cert-row">
+      <div class="cert-left">
+        <div class="cert-icon"><i class="fa-brands fa-google"></i></div>
+        <div>
+          <div class="cert-name">Google AI Essentials Professional Certificate</div>
+          <div class="cert-issuer">Google / Coursera</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span class="cert-date">05 AUG 2026</span>
+        <a class="btn" href="KeletsoRamothibe_GoogleAIEssentials_ProfessionalCertificate.pdf" target="_blank" style="padding:7px 14px;font-size:12.5px;">View</a>
+      </div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-left">
+        <div class="cert-icon"><i class="fa-brands fa-microsoft"></i></div>
+        <div>
+          <div class="cert-name">Microsoft Azure Fundamentals</div>
+          <div class="cert-issuer">Microsoft — learning modules &amp; mock exam completed</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span class="cert-pending">Exam Pending</span>
+      </div>
+    </div>
  
     <div class="cert-row">
       <div class="cert-left">
@@ -876,8 +911,8 @@
  
 <section id="contact">
   <div class="wrap">
-    <span class="eyebrow">Let's Build Something Together</span>
-    <h2 class="sec-title serif">Contact</h2>
+    <span class="eyebrow">Contact</span>
+    <h2 class="sec-title serif">Let's talk</h2>
     <p class="sec-intro">Open to junior IT and developer roles. The fastest way to reach me is email — I usually reply within a day.</p>
  
     <div class="contact-grid">
