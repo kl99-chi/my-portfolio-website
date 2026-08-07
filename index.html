@@ -233,6 +233,12 @@
  
   /* ---------- CARDS / PROJECTS ---------- */
   .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+  .project-grid{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+    gap:18px;
+  }
   .card{
     background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
     padding:22px;transition:.2s ease;
@@ -528,6 +534,7 @@
     <h2 class="sec-title serif">Selected projects</h2>
  
     <div class="grid-2">
+      <div class="project-grid">
       <article class="card">
         <div class="card-head">
           <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
@@ -597,6 +604,7 @@
           <a href="https://github.com/kl99-chi/awesome-athletics-club-system" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>Repository</a>
         </div>
       </article>
+      </div>
  
       <article class="card wide">
         <div class="card-head">
@@ -931,7 +939,7 @@
 <section id="contact">
   <div class="wrap">
     <span class="eyebrow">Contact</span>
-    <h2 class="sec-title serif">Let's talk</h2>
+    <h2 class="sec-title serif">Let's build something together</h2>
     <p class="sec-intro">Open to junior IT and developer roles. The fastest way to reach me is email — I usually reply within a day.</p>
  
     <div class="contact-grid">
