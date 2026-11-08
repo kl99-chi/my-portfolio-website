@@ -1,3 +1,21 @@
+Claude
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index · HTML
 <title>Keletso Ramothibe Portfolio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +59,7 @@
   --fg: #0e1730; --muted: #526080; --link: #1f5a99; --accent: #ffd43b; --on-accent: #0b1020;
   --add: #1a7f46; --del: #b3363b; color-scheme: light;
 }
-
+ 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 body {
@@ -63,7 +81,7 @@ h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .wrap { max-width: 1120px; margin-inline: auto; }
 .mono { font-family: var(--font-code); }
-
+ 
 /* header */
 .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(max(16px, env(safe-area-inset-left, 0px)) * -1) calc(max(16px, env(safe-area-inset-right, 0px)) * -1); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
 .top .wrap { display: flex; align-items: center; gap: 24px; min-height: 60px; }
@@ -79,14 +97,14 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 .btn.primary:hover { filter: brightness(1.06); }
 .top .btn { padding: 8px 16px; font-size: 0.9rem; }
-
+ 
 /* sections */
 .band { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
 .hero { border-top: 0; padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 88px); }
 .sec-head { display: grid; gap: 12px; margin-bottom: 40px; max-width: 62ch; }
 .sec-head h2 { font-size: clamp(1.9rem, 3.8vw, 2.9rem); font-weight: 600; }
 .sec-head p { color: var(--muted); }
-
+ 
 /* hero */
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
 .badge { display: inline-flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--muted); border: 1px solid var(--line); background: var(--surface); padding: 6px 14px 6px 12px; border-radius: 999px; margin-bottom: 26px; }
@@ -96,7 +114,7 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .facts { display: flex; flex-wrap: wrap; gap: 8px 26px; margin: 40px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 0.95rem; }
 .facts b { color: var(--fg); font-weight: 600; }
-
+ 
 .code { background: var(--code-bg); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; min-width: 0; box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.55); }
 .code-tab { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid #1b2442; font-family: var(--font-code); font-size: 0.8rem; color: var(--c-com); }
 .code-tab i { width: 8px; height: 8px; border-radius: 50%; background: var(--c-fn); }
@@ -107,7 +125,7 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .out { color: var(--add); }
 .cursor { display: inline-block; width: 8px; height: 1.05em; background: var(--accent); vertical-align: text-bottom; margin-left: 2px; animation: blink 1.1s steps(2, start) infinite; }
 @keyframes blink { to { visibility: hidden; } }
-
+ 
 /* about */
 .about-grid { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr) minmax(0, 300px); gap: clamp(28px, 4vw, 56px); align-items: start; }
 .photo { aspect-ratio: 4 / 5; max-width: 100%; border-radius: var(--r); background: var(--surface-2); border: 1px solid var(--line); overflow: hidden; position: relative; display: grid; place-items: center; }
@@ -122,7 +140,7 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .edu dl { margin: 0; display: grid; gap: 18px; }
 .edu dt { font-weight: 600; }
 .edu dd { margin: 2px 0 0; color: var(--muted); font-size: 0.95rem; }
-
+ 
 /* growth timeline */
 .diff { font-family: var(--font-code); font-size: 0.9rem; background: var(--code-bg); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 20px; display: grid; gap: 6px; margin-bottom: 56px; max-width: 760px; overflow-x: auto; color: var(--code-fg); }
 .diff div { white-space: nowrap; }
@@ -143,7 +161,7 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .rel-body ul { margin: 0; padding-left: 1.1em; color: var(--muted); display: grid; gap: 6px; }
 .rel-body li::marker { color: var(--line); }
 .chip-now { display: inline-block; font-family: var(--font-code); font-size: 0.72rem; background: var(--accent); color: var(--on-accent); padding: 2px 9px; border-radius: 999px; margin-left: 10px; vertical-align: middle; font-weight: 700; }
-
+ 
 /* work */
 .feature { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: clamp(22px, 3.5vw, 40px); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); margin-bottom: 20px; }
 .proj-meta { font-family: var(--font-code); font-size: 0.8rem; color: var(--muted); margin-bottom: 12px; }
@@ -165,7 +183,7 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .proj .links { margin-top: auto; padding-top: 20px; }
 .shot { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 6px; border: 1px solid var(--line); margin-bottom: 18px; }
 .sub { font-size: 1.2rem; font-weight: 600; margin: 56px 0 20px; letter-spacing: -0.01em; }
-
+ 
 /* skills */
 .skills { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 1fr)); gap: 40px clamp(24px, 4vw, 56px); }
 .sk h3 { font-size: 1rem; font-weight: 600; letter-spacing: 0; margin-bottom: 12px; color: var(--muted); }
@@ -174,7 +192,7 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .sk.py h3 { color: var(--accent); }
 .sk.py .big { font-size: clamp(2.4rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin-bottom: 12px; }
 .sk.py p { color: var(--muted); font-size: 0.97rem; max-width: 40ch; margin-bottom: 18px; }
-
+ 
 /* certs */
 .cert-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .cert-list li { display: grid; grid-template-columns: 130px minmax(0, 1fr) minmax(0, 220px) 70px; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
@@ -184,7 +202,7 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .cert-list .v { text-align: right; font-size: 0.92rem; font-weight: 600; }
 .learning { margin-top: 28px; color: var(--muted); }
 .learning b { color: var(--fg); font-weight: 600; }
-
+ 
 /* contact */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
 .contact-grid h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; }
@@ -198,7 +216,7 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.1; }
 .copy:hover { border-color: var(--muted); }
 footer { padding-block: 32px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
-
+ 
 @media (max-width: 960px) {
   .hero-grid, .contact-grid, .feature { grid-template-columns: minmax(0, 1fr); }
   .about-grid { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); }
@@ -227,7 +245,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
   .cursor { animation: none; }
 }
 </style>
-
+ 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Keletso Ramothibe, back to top">keletso<span>.py</span></a>
@@ -242,17 +260,17 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
     <a class="btn primary" href="#contact">Hire me</a>
   </div>
 </header>
-
+ 
 <main id="top">
   <section class="band hero">
     <div class="wrap hero-grid">
       <div>
         <p class="badge"><span class="dot" aria-hidden="true"></span>Intern at SABC. Open to entry-level developer roles.</p>
         <h1>Entry-level software developer. Python first.</h1>
-        <p class="lede">I'm a BSc IT graduate from North-West University. I build web apps, data tools and hackathon projects in Python, and I'm now learning how a large broadcaster works as a Deal Administration Executive Intern at the SABC.</p>
+        <p class="lede">I'm a BSc IT graduate from North-West University. I build web apps, data tools and hackathon projects in Python, and I now work in the Sales-Deal division at the SABC as a Deal Administration Executive Intern.</p>
         <div class="cta">
           <a class="btn primary" href="#work">See my work</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn" href="https://keletso-ramothibe-portfolio-website.netlify.app/KELETSO_Resume.pdf" target="_blank" rel="noopener">Download CV</a>
           <a class="btn" href="https://github.com/kl99-chi" target="_blank" rel="noopener">GitHub</a>
         </div>
         <ul class="facts">
@@ -262,14 +280,14 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
           <li><b>5</b> languages spoken</li>
         </ul>
       </div>
-
+ 
       <figure class="code" style="margin:0" aria-label="A Python class describing Keletso">
         <div class="code-tab"><i aria-hidden="true"></i>developer.py</div>
         <pre><code><span class="ln" data-n="1"><span class="kw">from</span> dataclasses <span class="kw">import</span> dataclass</span><span class="ln" data-n="2"> </span><span class="ln" data-n="3"><span class="fn">@dataclass</span></span><span class="ln" data-n="4"><span class="kw">class</span> <span class="fn">Developer</span>:</span><span class="ln" data-n="5">    name: str = <span class="st">"Keletso Ramothibe"</span></span><span class="ln" data-n="6">    role: str = <span class="st">"Entry-level developer"</span></span><span class="ln" data-n="7">    degree: str = <span class="st">"BSc IT, NWU"</span></span><span class="ln" data-n="8">    core: tuple = (<span class="st">"Python"</span>, <span class="st">"Flet"</span>, <span class="st">"Pandas"</span>)</span><span class="ln" data-n="9">    now: str = <span class="st">"Intern at the SABC"</span></span><span class="ln" data-n="10">    looking_for: str = <span class="st">"Junior developer role"</span></span><span class="ln" data-n="11"> </span><span class="ln" data-n="12">keletso = <span class="fn">Developer</span>()</span><span class="ln" data-n="13"><span class="fn">print</span>(<span class="st">f"{keletso.name}: {keletso.role}"</span>)</span><span class="ln" data-n="14"><span class="cm"># output</span></span><span class="ln out" data-n="15">Keletso Ramothibe: Entry-level developer<span class="cursor" aria-hidden="true"></span></span></code></pre>
       </figure>
     </div>
   </section>
-
+ 
   <section class="band" id="about">
     <div class="wrap about-grid">
       <div class="photo" aria-label="Photo of Keletso">
@@ -292,7 +310,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
       </div>
     </div>
   </section>
-
+ 
   <section class="band" id="growth">
     <div class="wrap">
       <div class="sec-head">
@@ -303,7 +321,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
         <div class="m">- v0.1  student, looking for a way into an IT career</div>
         <div class="p">+ v2.0  entry-level developer, shipping Python, working at SABC</div>
       </div>
-
+ 
       <ol class="log">
         <li class="rel">
           <div class="tag"><b>v0.1</b><span>2023</span></div>
@@ -360,12 +378,14 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
           </div>
         </li>
         <li class="rel now">
-          <div class="tag"><b>v2.0</b><span>Now</span></div>
+          <div class="tag"><b>v2.0</b><span>Oct 2026 to now</span></div>
           <div class="rel-body">
             <h3>Deal Administration Executive Intern, SABC<span class="chip-now">current</span></h3>
             <ul>
-              <li>Working inside South Africa's public broadcaster, learning how a large organisation runs its deals and paperwork.</li>
-              <li>Looking at that work as a developer: where the process is repetitive, and where a Python script could save people time.</li>
+              <li>Started at the SABC in October 2026, finished my training and was placed in the Sales-Deal division.</li>
+              <li>I load clients' advertising deals into the SABC system from the signed contract: the amount paid, the channels the client chose, peak or off-peak airtime, and the discounts that apply under company policy.</li>
+              <li>The work depends on accuracy and on applying rules the same way every time, which is the same thinking behind the 34 rule checks in ProofPath.</li>
+              <li>I'm interested in where a Python script could take over repetitive checks and calculations, such as discount rules.</li>
               <li>Next steps: a junior developer role, and a BSc Honours in IT while I work.</li>
             </ul>
           </div>
@@ -373,14 +393,14 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
       </ol>
     </div>
   </section>
-
+ 
   <section class="band" id="work">
     <div class="wrap">
       <div class="sec-head">
         <h2>Python projects first, then the rest</h2>
         <p>Role, stack and what I actually built, for each project.</p>
       </div>
-
+ 
       <article class="feature">
         <div>
           <p class="proj-meta">Solo build · 2026 · FNB App of the Year Hackathon</p>
@@ -401,7 +421,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
           <li><b>34 automated rule checks</b> protect the trust and challenge rules.</li>
         </ul>
       </article>
-
+ 
       <div class="grid3">
         <article class="proj">
           <p class="proj-meta">Team of 7 · 2025</p>
@@ -435,7 +455,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
           </div>
         </article>
       </div>
-
+ 
       <h3 class="sub">Other languages and stacks</h3>
       <div class="grid3">
         <article class="proj">
@@ -468,7 +488,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
       </div>
     </div>
   </section>
-
+ 
   <section class="band" id="skills">
     <div class="wrap">
       <div class="sec-head">
@@ -509,7 +529,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
       </div>
     </div>
   </section>
-
+ 
   <section class="band" id="certs">
     <div class="wrap">
       <div class="sec-head">
@@ -517,17 +537,17 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
       </div>
       <ul class="cert-list">
         <li><span class="d">12 Sep 2026</span><span class="n">Entelect Hack&lt;IT&gt; 2026</span><span class="i">Entelect</span><span class="v"><a href="https://keletso-ramothibe-portfolio-website.netlify.app/Keletso_Ramothibe_EH_Hack_IT__landscape.png" target="_blank" rel="noopener">View</a></span></li>
-        <li><span class="d">26 Aug 2026</span><span class="n">Microsoft Azure AI Fundamentals</span><span class="i">Microsoft</span><span class="v"></span></li>
-        <li><span class="d">5 Aug 2026</span><span class="n">Google AI Essentials Professional Certificate</span><span class="i">Google, Coursera</span><span class="v"></span></li>
-        <li><span class="d">20 Jun 2026</span><span class="n">Java (Basic)</span><span class="i">HackerRank</span><span class="v"></span></li>
-        <li><span class="d">5 Mar 2026</span><span class="n">MATLAB Onramp</span><span class="i">MathWorks</span><span class="v"></span></li>
-        <li><span class="d">23 Jan 2026</span><span class="n">Machine Learning Onramp</span><span class="i">MathWorks</span><span class="v"></span></li>
+        <li><span class="d">26 Aug 2026</span><span class="n">Microsoft Azure AI Fundamentals</span><span class="i">Microsoft</span><span class="v"><a href="https://learn.microsoft.com/api/credentials/share/en-za/KeletsoRamothibe-6698/C7EBA879EE048254?sharingId=B7DA44BE2CF541BB" target="_blank" rel="noopener">View</a></span></li>
+        <li><span class="d">5 Aug 2026</span><span class="n">Google AI Essentials Professional Certificate</span><span class="i">Google, Coursera</span><span class="v"><a href="https://keletso-ramothibe-portfolio-website.netlify.app/KeletsoRamothibe_GoogleAIEssentials_ProfessionalCertificate.pdf" target="_blank" rel="noopener">View</a></span></li>
+        <li><span class="d">20 Jun 2026</span><span class="n">Java (Basic)</span><span class="i">HackerRank</span><span class="v"><a href="https://keletso-ramothibe-portfolio-website.netlify.app/Java_certificate.pdf" target="_blank" rel="noopener">View</a></span></li>
+        <li><span class="d">5 Mar 2026</span><span class="n">MATLAB Onramp</span><span class="i">MathWorks</span><span class="v"><a href="https://keletso-ramothibe-portfolio-website.netlify.app/MATLAB_certificate.pdf" target="_blank" rel="noopener">View</a></span></li>
+        <li><span class="d">23 Jan 2026</span><span class="n">Machine Learning Onramp</span><span class="i">MathWorks</span><span class="v"><a href="https://keletso-ramothibe-portfolio-website.netlify.app/Machine_Learning_certificate.pdf" target="_blank" rel="noopener">View</a></span></li>
         <li><span class="d">Aug 2025</span><span class="n">Geekulcha NWU VPC Internal Hackathon</span><span class="i">Geekulcha, NWU</span><span class="v"><a href="https://keletso-ramothibe-portfolio-website.netlify.app/K_RAMOTHIBE_CERTIFICATE.pdf" target="_blank" rel="noopener">View</a></span></li>
       </ul>
       <p class="learning"><b>Learning now:</b> Oracle Cloud Infrastructure Concepts and Machine Learning Applications. <b>In progress:</b> FNB App Academy 2026, Johannesburg Business School at UJ.</p>
     </div>
   </section>
-
+ 
   <section class="band" id="contact">
     <div class="wrap contact-grid">
       <div>
@@ -535,7 +555,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
         <p>I'm looking for an entry-level developer role, a graduate programme or a learnership. I usually reply within a day.</p>
         <div class="cta">
           <a class="btn primary" href="mailto:keletsoramothibe99@gmail.com">Email me</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn" href="https://keletso-ramothibe-portfolio-website.netlify.app/KELETSO_Resume.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
       <div class="rows">
@@ -548,14 +568,14 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
     </div>
   </section>
 </main>
-
+ 
 <footer>
   <div class="wrap">
     <span>Keletso Ramothibe, entry-level software developer</span>
     <span>© 2026</span>
   </div>
 </footer>
-
+ 
 <script>
 (function () {
   var root = document.documentElement;
@@ -571,7 +591,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('kr-theme', next); } catch (e) {}
   });
-
+ 
   document.querySelectorAll('.copy').forEach(function (b) {
     b.addEventListener('click', function () {
       var text = b.getAttribute('data-copy');
@@ -587,3 +607,5 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
   });
 })();
 </script>
+ 
+Claude finished the response
